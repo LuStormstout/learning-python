@@ -1,2 +1,2 @@
 # LearningPython
-Learning python on coursera.
+Learning python.
