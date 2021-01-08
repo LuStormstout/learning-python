@@ -1,0 +1,14 @@
+url:
+  https://jacklucn.com
+types:
+  - 前端
+  - 后端
+  - 移动端
+  - 运维
+  - UI
+python:
+  web: django
+  spader: bs5
+a: 1
+b: 2
+c: [a, b, c]
