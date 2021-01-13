@@ -83,4 +83,3 @@ if __name__ == '__main__':
     res = re_obj.match(html)
     print(res.span())
     print(html[:22])
-
