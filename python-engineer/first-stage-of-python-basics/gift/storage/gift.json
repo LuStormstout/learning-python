@@ -1,1 +1,1 @@
-{}
+{"level1": {"level1": {}, "level2": {"iPhone10": {"name": "iPhone10", "count": 30}, "iPhone11": {"name": "iPhone11", "count": 10}}, "level3": {}}, "level2": {"level1": {}, "level2": {}, "level3": {"ipad": {"name": "ipad", "count": 10}}}, "level3": {"level1": {}, "level2": {}, "level3": {}}, "level4": {"level1": {}, "level2": {}, "level3": {"\u65b0\u534e\u5b57\u5178": {"name": "\u65b0\u534e\u5b57\u5178", "count": 10}, "\u6977\u4e66\u5b57\u5178": {"name": "\u6977\u4e66\u5b57\u5178", "count": 40}}}}
