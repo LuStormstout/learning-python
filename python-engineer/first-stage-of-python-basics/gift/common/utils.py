@@ -2,8 +2,13 @@
 
 
 import os
+import time
 
 from .error import NotPathError, FormatError, NotFileError
+
+
+def timestamp_to_string(timestamp):
+    return time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(timestamp))
 
 
 def check_file(path):
