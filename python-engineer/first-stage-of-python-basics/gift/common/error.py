@@ -12,10 +12,15 @@ class FormatError(Exception):
 
 
 class NotFileError(Exception):
-    def __init__(self, message='this is not file'):
+    def __init__(self, message='not a file'):
         self.message = message
 
 
 class UserExistsError(Exception):
+    def __init__(self, message):
+        self.message = message
+
+
+class RoleError(Exception):
     def __init__(self, message):
         self.message = message

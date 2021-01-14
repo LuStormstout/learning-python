@@ -4,13 +4,14 @@ import os
 import json
 import time
 
-from common.error import UserExistsError
 from common.utils import check_file, timestamp_to_string
+from common.error import UserExistsError, RoleError
+from common.consts import ROLES
 
 """
-    1、确定用户表中每个用户的信息字段
-    2、读取 user.json 文件
-    3、写入 user.json （检测该用户是否存在），存在则不写入
+    1、role 的修改
+    2、active 的修改
+    3、删除用户
 
     username
     role normal or admin
@@ -18,6 +19,9 @@ from common.utils import check_file, timestamp_to_string
     create_time timestamp
     update_time timestamp
     gifts []
+    
+    username:{username, role, active, ...}
+    
 """
 
 
@@ -60,7 +64,7 @@ class Base(object):
         users = self.__read_users()
 
         if user['username'] in users:
-            raise UserExistsError('username %s had exists' % user['username'])
+            raise UserExistsError("user '%s' already exists" % user['username'])
 
         users.update(
             {user['username']: user}
@@ -70,6 +74,53 @@ class Base(object):
         with open(self.user_json, 'w') as f:
             f.write(json_users)
 
+    def __change_role(self, username, role):
+        users = self.__read_users()
+        user = users.get(username)
+        if not user:
+            return False
+
+        if role not in ROLES:
+            raise RoleError("role is not allowed to be '%s'" % role)
+
+        user['role'] = role
+        user['update_time'] = time.time()
+        users[username] = user
+
+        json_data = json.dumps(users)
+        with open(self.user_json, 'w') as f:
+            f.write(json_data)
+        return True
+
+    def __change_active(self, username):
+        users = self.__read_users()
+        user = users.get(username)
+        if not user:
+            return False
+
+        user['active'] = not user['active']
+        user['update_time'] = time.time()
+        users[username] = user
+
+        json_data = json.dumps(users)
+        with open(self.user_json, 'w') as f:
+            f.write(json_data)
+        return True
+
+    def __delete_user(self, username):
+        users = self.__read_users()
+        user = users.get(username)
+        if not user:
+            return False
+
+        delete_user = users.pop(username)
+
+        json_data = json.dumps(users)
+        with open(self.user_json, 'w') as f:
+            f.write(json_data)
+
+        return delete_user
+
 
 if __name__ == '__main__':
     user_path = os.path.join(os.getcwd(), 'storage', 'user.json')
@@ -77,4 +128,13 @@ if __name__ == '__main__':
 
     base = Base(user_json=user_path, gift_json=gift_path)
 
-    # base.write_user(username='JackLu', role='admin')
+    # base.write_user(username='jacklu', role='admin')
+
+    # result = base.change_role(username='jacklu', role='admin')
+    # print(result)
+
+    # result = base.change_active(username='jacklu')
+    # print(result)
+
+    # result = base.delete_user(username='jacklu')
+    # print(result)

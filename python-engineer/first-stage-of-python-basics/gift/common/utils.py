@@ -13,10 +13,10 @@ def timestamp_to_string(timestamp):
 
 def check_file(path):
     if not os.path.exists(path):
-        raise NotPathError('not found %s' % path)
+        raise NotPathError("file '%s' does not exist" % path)
 
     if not path.endswith('.json'):
         raise FormatError('need json format')
 
     if not os.path.isfile(path):
-        raise NotFileError('this is not a file')
+        raise NotFileError('not a file')
