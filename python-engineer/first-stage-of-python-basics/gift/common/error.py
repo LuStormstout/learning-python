@@ -1,11 +1,16 @@
 # coding:utf-8
 
 
-class NotFileError(Exception):
+class NotPathError(Exception):
     def __init__(self, message):
         self.message = message
 
 
 class FormatError(Exception):
     def __init__(self, message='need json format'):
+        self.message = message
+
+
+class NotFileError(Exception):
+    def __init__(self, message='this is not file'):
         self.message = message
