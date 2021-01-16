@@ -34,3 +34,14 @@ class LevelError(Exception):
 class NegativeNumberError(Exception):
     def __init__(self, message):
         self.message = message
+
+
+class NotUserError(Exception):
+    def __init__(self, message):
+        self.message = message
+
+
+class UserActiveError(Exception):
+    def __init__(self, message):
+        self.message = message
+
