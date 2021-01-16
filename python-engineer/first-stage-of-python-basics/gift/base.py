@@ -5,14 +5,12 @@ import json
 import time
 
 from common.utils import check_file, timestamp_to_string
-from common.error import UserExistsError, RoleError, LevelError
+from common.error import UserExistsError, RoleError, LevelError, NegativeNumberError
 from common.consts import ROLES, FIRST_LEVELS, SECOND_LEVELS
 
 """
-    1、gifts 奖品结构的确定
-    2、gifts 奖品的读取
-    3、gifts 添加
-    4、gifts 初始化
+    1、gifts 修改（数量递减）
+    2、gifts 奖品删除
     
     {
       "level1": {
@@ -204,6 +202,62 @@ class Base(object):
         gifts[first_level] = current_gift_pool
         self.__save(gifts, self.gift_json)
 
+    def __gift_update(self, first_level, second_level, gift_name, gift_count=1):
+        data = self.__check_and_get_gift(first_level, second_level, gift_name)
+        if data is False:
+            return data
+
+        current_gift_pool = data.get('level_one')
+        current_second_gift_pool = data.get('level_two')
+        gifts = data.get('gifts')
+
+        current_gift = current_second_gift_pool[gift_name]
+        if current_gift['count'] - gift_count < 0:
+            raise NegativeNumberError('gift count cannot be negative')
+
+        current_gift['count'] -= gift_count
+        current_second_gift_pool[gift_name] = current_gift
+        current_gift_pool[second_level] = current_second_gift_pool
+        gifts[first_level] = current_gift_pool
+
+        self.__save(gifts, self.gift_json)
+
+    def __check_and_get_gift(self, first_level, second_level, gift_name):
+        if first_level not in FIRST_LEVELS:
+            raise LevelError("'first level' does not exist")
+        if second_level not in SECOND_LEVELS:
+            raise LevelError("'second level' does not exist")
+
+        gifts = self.__read_gifts()
+
+        level_one = gifts[first_level]
+        level_two = level_one[second_level]
+
+        if gift_name not in level_two:
+            return False
+
+        return {
+            'level_one': level_one,
+            'level_two': level_two,
+            'gifts': gifts
+        }
+
+    def __gift_delete(self, first_level, second_level, gift_name):
+        data = self.__check_and_get_gift(first_level, second_level, gift_name)
+        if data is False:
+            return data
+
+        current_gift_pool = data.get('level_one')
+        current_second_gift_pool = data.get('level_two')
+        gifts = data.get('gifts')
+
+        delete_gift_data = current_second_gift_pool.pop(gift_name)
+        current_gift_pool[second_level] = current_second_gift_pool
+        gifts[first_level] = current_gift_pool
+        self.__save(gifts, self.gift_json)
+
+        return delete_gift_data
+
     def __save(self, data, path):
         self.is_not_used()
         json_data = json.dumps(data)
@@ -238,4 +292,10 @@ if __name__ == '__main__':
     # print(result)
 
     # result = base.write_gift(first_level='level4', second_level='level3', gift_name='楷书字典', gift_count=10)
+    # print(result)
+
+    # result = base.gift_update(first_level='level4', second_level='level3', gift_name='楷书字典', gift_count=10)
+    # print(result)
+
+    # result = base.gift_delete(first_level='level1', second_level='level2', gift_name='iPhone10')
     # print(result)
