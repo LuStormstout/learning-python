@@ -1,14 +1,6 @@
 # coding:utf-8
 
 
-"""
-    1、admin 类的构建
-    2、获取用户函数（包含获取身份）
-    3、添加用户（判断当前身份是否是管理员）
-    4、冻结与修复用户
-    5、修改用户身份
-"""
-
 import os
 
 from base import Base
