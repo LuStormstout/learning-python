@@ -30,7 +30,7 @@ class Admin(Base):
             raise UserActiveError(f"user '{self.username}' is not available")
 
         if current_user.get('role') != 'admin':
-            raise RoleError('permission denied')
+            raise RoleError('permission denied by admin')
 
         self.user = current_user
         self.role = current_user.get('role')
