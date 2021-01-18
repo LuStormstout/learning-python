@@ -8,9 +8,9 @@ SELECT empno, ename FROM t_emp LIMIT 10,5;
 
 SELECT empno, ename, sal FROM t_emp ORDER BY sal DESC;
 
-SELECT empno, ename, sal, hiredate FROM t_emp ORDER BY ename ASC;
+SELECT empno, ename, sal, hiredate FROM t_emp ORDER BY ename;
 
-SELECT empno, ename, sal, hiredate FROM t_emp ORDER BY sal DESC, hiredate ASC;
+SELECT empno, ename, sal, hiredate FROM t_emp ORDER BY sal DESC, hiredate;
 
 SELECT empno, ename, deptno, sal, hiredate FROM t_emp ORDER BY deptno, sal DESC;
 

@@ -10,4 +10,9 @@
 在 where 子句中 包含索引的列应该放在最左边
 会筛选掉大量的数据的条件一般推荐放在最左边，可以增加查询速度。
 
-sql 语句执行顺序 FROM > WHERE > SELECT > ORDER BY > LIMIT
+sql 语句执行顺序 FROM > WHERE > GROUP BY > SELECT > ORDER BY > LIMIT
+
+查询语句中如果含有 GROUP BY 子句，那么 SELECT 子句中的内容就必须要遵守规定：
+    SELECT 子句中可以包含聚合函数，或者 GROUP BY 子句中的字段，其余内容均不可以出现在 SELECT 字句中。
+
+GROUP_CONCAT 函数可以把分组查询中的某个字段拼成一个以逗号分隔开的字符串
