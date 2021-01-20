@@ -24,3 +24,6 @@ SELECT deptno, COUNT(*), AVG(sal), MAX(sal), MIN(sal) FROM t_emp GROUP BY deptno
 
 -- GROUP_CONCAT 函数可以把分组查询中的某个字段拼成一个以逗号分隔开的字符串
 SELECT deptno, GROUP_CONCAT(ename), COUNT(*) FROM t_emp WHERE sal >= 2000 GROUP BY deptno;
+
+-- HAVING 要依赖 GROUP BY 存在
+SELECT deptno FROM t_emp GROUP BY deptno HAVING AVG(sal) >= 2000;
