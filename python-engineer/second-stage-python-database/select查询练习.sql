@@ -1,5 +1,3 @@
-USE demo;
-SELECT * FROM t_emp;
 SELECT empno,ename,sal FROM t_emp;
 
 SELECT empno, sal*12 AS income FROM t_emp;

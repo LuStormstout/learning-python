@@ -13,6 +13,6 @@
 sql 语句执行顺序 FROM > WHERE > GROUP BY > SELECT > ORDER BY > LIMIT
 
 查询语句中如果含有 GROUP BY 子句，那么 SELECT 子句中的内容就必须要遵守规定：
-    SELECT 子句中可以包含聚合函数，或者 GROUP BY 子句中的字段，其余内容均不可以出现在 SELECT 字句中。
+SELECT 子句中可以包含聚合函数，或者 GROUP BY 子句中的字段，其余内容均不可以出现在 SELECT 字句中。
 
 GROUP_CONCAT 函数可以把分组查询中的某个字段拼成一个以逗号分隔开的字符串
