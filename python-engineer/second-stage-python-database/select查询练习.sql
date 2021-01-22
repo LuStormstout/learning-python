@@ -22,7 +22,6 @@ SELECT DISTINCT job, ename FROM t_emp;
 SELECT empno, deptno, ename, sal FROM t_emp WHERE (deptno = 10 OR deptno = 20) AND sal >= 2000;
 
 SELECT empno, ename, sal, hiredate FROM t_emp WHERE deptno=10 AND (sal + IFNULL(comm,0))*12 >= 15000 AND DATEDIFF(NOW(),hiredate)/365 >= 20;
-SELECT NOW();
 
 SELECT empno, ename, sal, hiredate FROM t_emp WHERE deptno IN(10,20,30) AND job != 'SALESMAN' AND hiredate < '1985-01-01';
 
