@@ -29,3 +29,5 @@ SELECT deptno, GROUP_CONCAT(ename), COUNT(*) FROM t_emp WHERE sal >= 2000 GROUP 
 SELECT deptno FROM t_emp GROUP BY deptno HAVING AVG(sal) >= 2000;
 
 SELECT deptno FROM t_emp WHERE hiredate >= "1982-01-01" GROUP BY deptno HAVING COUNT(*) >= 2;
+
+SELECT deptno, COUNT(*) FROM t_emp WHERE deptno IN(10,20) GROUP BY 1;
