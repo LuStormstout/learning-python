@@ -51,3 +51,20 @@ SELECT e.empno, e.ename, d.dname FROM t_dept AS d RIGHT JOIN t_emp AS e ON e.dep
 
 -- 查询每个部门的名称和部门的人数
 SELECT d.dname, COUNT(e.deptno) FROM t_dept AS d LEFT JOIN t_emp AS e ON d.deptno = e.deptno GROUP BY d.deptno;
+
+-- 查询每个部门的名称和部门的人数，如果没有部门的员工，部门名称用 NULL 代替。
+-- （查询语句） UNION （查询语句） UNION （查询语句） ......
+(SELECT d.dname, COUNT(e.deptno) FROM t_dept AS d LEFT JOIN t_emp AS e ON d.deptno = e.deptno GROUP BY d.deptno)
+UNION
+(SELECT d.dname, COUNT(*) FROM t_dept AS d RIGHT JOIN t_emp AS e ON d.deptno = e.deptno GROUP BY d.deptno);
+
+-- 查询每名员工的编号、姓名、部门、月薪、工资等级、工龄、上司编号、上司姓名、上司部门
+SELECT e.empno, e.ename, d.dname, e.sal + IFNULL(e.comm,0), s.grade, FLOOR(DATEDIFF(NOW(),e.hiredate)/365), t.empno AS mgr_no, t.ename AS mgr_name, t.dname AS mgr_dname
+FROM t_emp AS e
+LEFT JOIN t_dept AS d ON e.deptno = d.deptno
+LEFT JOIN t_salgrade AS s ON e.sal BETWEEN s.losal AND s.hisal
+LEFT JOIN (SELECT e1.empno, e1.ename, d1.dname FROM t_emp AS e1 JOIN t_dept AS d1 ON e1.deptno = d1.deptno) AS t ON e.mgr = t.empno;
+
+-- 内连接只保留符合条件的记录，所以查询条件写在 ON 子句和 WHERE 子句中的效果是相同的。但是外连接里，条件写在 WHERE 子句里，不符合条件的记录是会被过滤掉的，而不是保留下来。
+SELECT e.deptno, e.ename, d.dname FROM t_emp e LEFT JOIN t_dept d ON e.deptno = d.deptno WHERE e.deptno = 10;
+SELECT e.deptno, e.ename, d.dname FROM t_emp e LEFT JOIN t_dept d ON e.deptno = d.deptno AND e.deptno = 10;
