@@ -1,0 +1,32 @@
+避免写入直接操作数据文件
+如果数据的写入直接操作数据文件是非常危险的事情
+
+利用日志来实现间接写入
+    MySQL 总共有 5 中日志，其中只有 redo 日志和 undo 日志与事务有关。
+    数据库 -> 拷贝数据到 undo 日志 -> 记录修改到 redo 日志（增删改查的操作） -> 同步数据到数据库
+
+Transaction
+    RDBMS = SQL 语句 + 事务（ACID）
+    事务的四个特性（ACID 属性）：原子性、一致性、隔离性、持久性。
+        原子性：一个事务中的所有操作要么全部完成，要么全部失败。事务执行后，不允许停留在中间某个状态。
+        一致性：不管在任何给定的时间、并发事务有多少，事务必须保证运行结果的一致性（阻止事务之间相互读取临时数据）
+        隔离型：隔离型要求事务不受其他并发事务的影响，如同在给定的时间内，该事务是数据库唯一运行的事务（在 undo 和 redo 日志文件中都会标记数据是属于哪一个事务的）
+        持久性：事务一旦提交，结果便是永久性的。即便发生宕机。仍然可以依靠事务日志完成数据的持久化
+    事务是一个或者多个 SQL 语句组成的整体，要么全部执行成功，要么全都执行失败。
+
+事务的隔离级别：
+    1、read uncommitted 读取未提交的数据（可以读取其他事务未提交的数据）
+        SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED; （当前会话）
+    2、read committed 读取已经提交的数据（代表当前事务只能读取其他事务已经提交的数据）
+        SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;
+    3、repeatable read 重复读取（代表事务在执行中反复读取数据，得到的结果是一致的，不会受其他事务的影响，MySQL 默认的事务隔离级别）
+        场景：订单 A 以 a 元价格已经下单，在支付时其他事务对 A 对应的商品价格修改为了 b，但是 A 还应以 a 价格支付订单（需要先将数据载入到 undo 日志中）。
+        SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+    4、serializable 序列化（由于事务并发执行所带来的各种问题，前三种隔离级别只适用在某些业务场景中，但是序列化的隔离性，让事务逐一执行，就不会产生上述问题了。）因为逐一执行，效率（并发性）也就更低了，所以很少使用。
+        SET SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+管理事务
+    默认情况下，MySQL 执行每条 SQL 语句都会自动开启和提交事务
+    为了让多条 SQL 语句纳入到一个事务之下，可以手动管理事务
+    START TRANSACTION;
+    SQL 语句 ...
+    [COMMIT | ROLLBACK];
