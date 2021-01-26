@@ -22,7 +22,8 @@ Transaction
     3、repeatable read 重复读取（代表事务在执行中反复读取数据，得到的结果是一致的，不会受其他事务的影响，MySQL 默认的事务隔离级别）
         场景：订单 A 以 a 元价格已经下单，在支付时其他事务对 A 对应的商品价格修改为了 b，但是 A 还应以 a 价格支付订单（需要先将数据载入到 undo 日志中）。
         SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ;
-    4、serializable 序列化（由于事务并发执行所带来的各种问题，前三种隔离级别只适用在某些业务场景中，但是序列化的隔离性，让事务逐一执行，就不会产生上述问题了。）因为逐一执行，效率（并发性）也就更低了，所以很少使用。
+    4、serializable 序列化（由于事务并发执行所带来的各种问题，前三种隔离级别只适用在某些业务场景中，但是序列化的隔离性，让事务逐一执行，就不会产生上述问题了。）
+        因为逐一执行，效率（并发性）也就更低了，所以很少使用。
         SET SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 管理事务
     默认情况下，MySQL 执行每条 SQL 语句都会自动开启和提交事务
