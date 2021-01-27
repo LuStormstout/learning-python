@@ -120,3 +120,12 @@ SET e.sal = (
 		ELSE e.sal
 	END
 );
+
+-- MySQL 数据库提供的 AES 加密和解密函数
+-- AES_ENCRYPT(原始数据,密匙字符串) AES 加密
+-- AES_DECRYPT(加密结果,密匙字符串) AES 解密
+-- HEX(N_or_S) 二进制转换成十六进制
+-- UNHEX(str) 十六进制转换成二进制
+SELECT AES_ENCRYPT("你好世界","ABC123456");
+SELECT HEX(AES_ENCRYPT("你好世界","ABC123456"));
+SELECT AES_DECRYPT(UNHEX("E85A104B6142A7375E53C0545CAD48EE"),"ABC123456");
