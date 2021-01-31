@@ -72,5 +72,46 @@ sql = ("SELECT COUNT(*) FROM t_user WHERE username = %s "
 cursor.execute(sql, (username, password))  # 先把 SQL 预编译，再传入字符串。
 print(cursor.fetchone()[0])
 
+"""
+    事务控制
+        Connector 为我们提供了非常简单的事务控制函数
+        con.start_transaction([事务的隔离级别])
+        con.commit()
+        con.rollback()
+        
+    异常处理
+        try:
+            con = mysql.connector.connect(...)
+            [ con.start_transaction() ]
+            ...
+        except Exception as e:
+            [ con.rollback() ]
+            print(e)
+        finally:
+            if "con" in dir():
+                con.close()
+"""
+try:
+    con = mysql.connector.connect(
+        host="localhost",
+        port="3306",
+        user="root",
+        password="cptbtptp",
+        database="demo"
+    )
+    con.start_transaction()
+    cursor = con.cursor()
+    sql = "INSERT INTO t_emp(empno, ename, job, mgr, hiredate, sal, comm, deptno) " \
+          "VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+    cursor.execute(sql, (9600, "赵娜", "SALESMAN", None, "1985-12-01", 2500, None, 10))
+    con.commit()
+except Exception as e:
+    if "con" in dir():
+        con.rollback()
+    print(e)
+finally:
+    if "con" in dir():
+        con.close()
+
 # 关闭数据库连接
 con.close()
