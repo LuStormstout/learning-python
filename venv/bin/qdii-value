@@ -1,0 +1,12 @@
+#!/Library/WebServer/Documents/python/LearningPython/venv/bin/python3
+# EASY-INSTALL-ENTRY-SCRIPT: 'qdii-value==0.3.11','console_scripts','qdii-value'
+__requires__ = 'qdii-value==0.3.11'
+import re
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.exit(
+        load_entry_point('qdii-value==0.3.11', 'console_scripts', 'qdii-value')()
+    )
