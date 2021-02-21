@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Html</title>
+</head>
+<body>
+<a href="#food-article">食物文章锚点跳转</a>
+<br>
+<a href="./welcome.html#food-article">另一个页面的食物文章锚点跳转</a>
+
+<h1>Google 服务条款</h1>
+<p>我们一直在开发新的技术和功能，以期改进我们的服务。例如，我们在人工智能上投入资源，以通过机器学习来检测和屏蔽垃圾邮件和恶意软件，
+    并提供同步翻译等多项创新功能。为实现持续性的改进，我们有时会添加或移除某些功能，<br>提高或降低服务的限制，开始提供新服务，或者停止提供旧服务。</p>
+<p>如果我们进行的实质性更改会对您的服务使用体验产生负面影响，或者如果我们将停止提供服务，我们会在合理的时间提前向您发出通知，
+    并让您有机会通过 Google 导出从 Google 帐号中导出您的内容，除非发生紧急情况（例如抗击滥用行为、响应法律要求，或解决安全和运营方面的问题）。</p>
+
+<p>
+    <span>Google logo:</span>
+    <br>
+    <img src="../images/google_logo.png" alt="logo">
+</p>
+
+<p>
+    <span>Apple 网站链接</span>
+    <a href="https://www.apple.com.cn/" target="_blank">
+        <img src="../images/apple-logo.png" alt="apple logo" style="max-width: 100px">
+    </a>
+</p>
+
+<p>
+    <a href="welcome.html">打开新页面</a>
+</p>
+
+<hr>
+<div class="ul-ol-practice">
+    <h3>列表：</h3>
+    <span>无序列表：</span>
+    <ul>
+        <li>Python</li>
+        <li>MySQL</li>
+        <li>PHP</li>
+        <li>Javascript</li>
+        <li>Ruby</li>
+    </ul>
+    <span>有序列表</span>
+    <ol>
+        <li>Python 98.0%</li>
+        <li>C 1.2%</li>
+        <li>C++ 0.1%</li>
+        <li>PowerShell 0.0%</li>
+        <li>PLpgSQL 0.0%</li>
+    </ol>
+</div>
+
+<hr>
+<div class="table-practice">
+    <h3>表格：</h3>
+    <table border="20px solid" width="800px" bgcolor="#ccc" cellpadding="5px" cellspacing="10px">
+        <caption>商品信息表</caption>
+        <thead>
+        <tr>
+            <th>商品类别</th>
+            <th>商品名称</th>
+            <th>单位</th>
+            <th>数量</th>
+        </tr>
+        </thead>
+        <tbody align="center">
+        <tr>
+            <td rowspan="2">家电类</td>
+            <td>冰箱</td>
+            <td>台</td>
+            <td align="right">121.00</td>
+        </tr>
+        <tr>
+            <td>洗衣机</td>
+            <td>台</td>
+            <td align="right">92.00</td>
+        </tr>
+        <tr>
+            <td>辅料</td>
+            <td>网线</td>
+            <td>米</td>
+            <td align="right">28.60</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="4">备注：</td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+<hr>
+<div class="form-practice">
+    <h3>表单：</h3>
+    <form action="" method="post">
+        <label for="username">请输入姓名：</label>
+        <input type="text" name="username" id="username"><br>
+        <label for="password">请输入密码：</label>
+        <input type="password" name="password" id="password"><br>
+        <label for="confirm-password">请再次输入密码：</label>
+        <input type="password" name="confirm-password" id="confirm-password"><br>
+        <label>性别：</label>
+        <input type="radio" name="sex" id="sex-boy" value="1" checked="checked">男
+        <input type="radio" name="sex" id="sex-girl" value="0">女<br>
+        <label>兴趣爱好：</label>
+        <input type="checkbox" name="hobby" id="hobby-1" value="1">游泳
+        <input type="checkbox" name="hobby" id="hobby-2" value="2">看书
+        <input type="checkbox" name="hobby" id="hobby-3" value="3">爬山
+        <input type="checkbox" name="hobby" id="hobby-4" value="4">足球<br>
+        <label>生日：</label>
+        <select name="birthday-year" id="birthday-year">
+            <option value="1995">1995</option>
+            <option value="1996">1996</option>
+            <option value="1997" selected="selected">1997</option>
+            <option value="1998">1998</option>
+            <option value="1999">1999</option>
+            <option value="2000">2000</option>
+        </select>年
+        <select name="birthday-month" id="birthday-month">
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+            <option value="4">04</option>
+            <option value="5">05</option>
+        </select>月
+        <select name="birthday-day" id="birthday-day">
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+            <option value="4">04</option>
+            <option value="5">05</option>
+        </select>日<br>
+        <label>头像：</label>
+        <img src="../images/avatar/5.gif" alt="avatar" width="60px">
+        <select name="" id="">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select><br>
+        <input type="button" value="普通按钮">
+        <input type="submit" value="提交按钮">
+    </form>
+    <br>
+    <form action="">
+        <textarea name="content" id="content" cols="100" rows="10"></textarea><br>
+        <input type="file">
+        <input type="button" value="上传"><br>
+        000<input type="hidden">000<br>
+        <select size="4" multiple="true">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select>
+    </form>
+</div>
+
+<hr>
+<div style="margin-left: 30%; margin-right: 30%">
+    <a name="food-article">
+        <h2>那些被发明的“外国菜”：从美国“第一中餐”左宗棠鸡说起</h2>
+        <img src="../images/food-01.jpg" alt="中餐外卖一般这个样子">
+        <p>
+            今天，我们饮食的多样性要远远超过历史上任何时期。即便在一个不起眼的小镇，你也能在街道两边发现印度餐馆、日本寿司店或者中餐外卖餐馆。在大一点的城市，特色非洲面包（spongy
+            injera）、韩国石锅拌饭、约旦茄泥酱、四川麻婆豆腐、墨西哥辣椒酱、意大利面、越南米粉等等各国风味美食应有尽有。
+        </p>
+        <p>
+            然而，你心目中的那些外国菜往往却是在离你家不远的地方发明出来的。在它号称的原产国，这些美食往往并不存在。
+        </p>
+        <p>
+            比如，在美国和很多其他国家，“左宗棠鸡”是一道最受欢迎的中国菜。从旧金山到奥马哈（Omaha）、从内布拉斯加（Nebraska）到伦敦的各地中餐馆里都有这道菜：酥脆炸鸡块勾上糖芡汁做成的所谓“中国传统美食”。
+        </p>
+        <p>
+            但是英国美食家、厨师扶霞（Fuschia Dunlop）在这道菜号称的起源地--中国湖南却发现，根本没人听说过“左宗棠鸡”。实际上，中国其他地方的人也都没听说过这道菜，并且它的味道和正宗湖南菜也毫无相似之处。
+        </p>
+        <img src="../images/food-02.jpg" alt="中餐">
+        <p>
+            左宗棠是一个真实的历史人物。这位中国将领生于中国湖南省，曾经参与镇压太平天国叛乱。这场暴力叛乱发生于19世纪中期，其首领自称是耶稣基督之弟，叛乱军队差一点就推翻了清朝的统治。但是，据史书记载，左宗棠将军一直到去世也没对炸鸡产生过任何特殊兴趣。扶霞写道，这道中国菜的发明人--湖南籍厨师彭长贵才是把左宗棠将军的名字和炸鸡块绑在一起的始作俑者。
+        </p>
+        <p>
+            彭长贵是一位为中国国民政府服务的著名厨师。1949年中国大陆易手后他去了台湾。离开中国大陆后，他自己创制了这道菜，但是最初它的味道中所含的酸味要多于甜味。纽约餐馆经营者在台北品尝到彭长贵发明的左宗棠鸡后，就把这道菜带到了美国。随着时间的推移，这道菜的味道也不断演变，最终形成了和最初的味道截然不同的偏甜、粘稠口味，从而迎合比湖南人更喜甜不喜酸的美国消费者的胃口。
+        </p>
+        <p>
+            2014年的纪录片《寻找左宗棠》探寻了这道菜的起源，并且把目前流行版本的“左宗棠鸡”的照片展示给了时年96岁的彭长贵。他看了照片，嘴里嘟囔着说：“简直瞎胡闹。”
+        </p>
+        <p>
+            另一道变种的美味中国菜“炒面三明治”也有同样的故事。这道菜是用两片面包中间夹上浇上深色酱汁的炒面做成的。自20世纪中叶开始，位于波士顿以南的马萨诸塞州Fall
+            River地区的中餐馆就开始流行这道能提供足够热量的廉价午餐菜式。
+        </p>
+        <p>
+            在美国很多地区还流行炒杂碎-人们认为这道菜起源于向美国输出大量移民的中国粤西地区。
+        </p>
+        <p>
+            在世界其他地方，炒杂碎是用豆芽、肉丝和种类无穷无尽的各种蔬菜为原料爆炒，然后浇上浓厚的芡汁做成。它甚至成了什锦烹调法的代名词。美国炒杂碎则由通心粉、牛肉末和各色蔬菜做成，非常流行。
+        </p>
+    </a>
+</div>
+</body>
+</html>
