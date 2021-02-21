@@ -72,6 +72,36 @@ while True:
                                         page -= 1
                                     elif opt == "next" and page < count_page:
                                         page += 1
+                                    elif 1 <= int(opt) <= 10:
+                                        news_id = result[int(opt) - 1][0]
+                                        __news_service.update_unapproved_news(news_id=news_id)
+                            elif opt == "2":
+                                page = 1
+                                while True:
+                                    os.system("clear")
+                                    count_page = __news_service.search_count_page()
+                                    result = __news_service.search_list(page=page)
+                                    for index in range(len(result)):
+                                        one = result[index]
+                                        print(Fore.LIGHTBLUE_EX,
+                                              '\n\t%d\t%s\t%s\t%s' % (index + 1, one[1], one[2], one[3]))
+                                    print(Fore.LIGHTRED_EX, "\n\t---------------------")
+                                    print(Fore.LIGHTBLUE_EX, "\n\t 当前第 %d 页/共 %d 页" % (page, count_page))
+                                    print(Fore.LIGHTRED_EX, "\n\t---------------------")
+                                    print(Fore.LIGHTRED_EX, "\n\tback.返回上一层")
+                                    print(Fore.LIGHTRED_EX, "\n\tprev.上一页")
+                                    print(Fore.LIGHTRED_EX, "\n\tnext.下一页")
+                                    print(Style.RESET_ALL)
+                                    opt = input("\n\t请输入操作编号：")
+                                    if opt == "back":
+                                        break
+                                    elif opt == "prev" and page > 1:
+                                        page -= 1
+                                    elif opt == "next" and page < count_page:
+                                        page += 1
+                                    elif 1 <= int(opt) <= 10:
+                                        news_id = result[int(opt) - 1][0]
+                                        __news_service.delete_news(news_id=news_id)
                     elif opt == "back":
                         break
                     elif opt == "exit":
