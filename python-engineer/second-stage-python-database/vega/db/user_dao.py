@@ -36,3 +36,22 @@ class UserDao:
         finally:
             if "con" in dir():
                 con.close()
+
+    # 添加用户
+    @staticmethod
+    def insert(username, password, email, role_id):
+        try:
+            con = pool.get_connection()
+            con.start_transaction()
+            cursor = con.cursor()
+            sql = "INSERT INTO t_user(username, password, email, role_id) " \
+                  "VALUES(%s, HEX(AES_ENCRYPT(%s, 'HelloWorld')), %s, %s)"
+            cursor.execute(sql, (username, password, email, role_id))
+            con.commit()
+        except Exception as e:
+            if "con" in dir():
+                con.rollback()
+            print(e)
+        finally:
+            if "con" in dir():
+                con.close()
