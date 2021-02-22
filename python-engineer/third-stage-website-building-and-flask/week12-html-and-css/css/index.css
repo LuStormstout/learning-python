@@ -1,0 +1,136 @@
+/*CSS 选择器的优先级*/
+/*!important*/
+/*行内样式*/
+/*ID 选择器*/
+/*类选择器*/
+/*标签*/
+/*通配符*/
+/*浏览器默认属性*/
+
+p {
+    color: #123456;
+    font-size: 25px;
+
+    /*对齐方式 ltr、rtl*/
+    /*direction: ltr;*/
+
+    /*字符间距*/
+    /*letter-spacing: 10px;*/
+
+    /*行高*/
+    /*line-height: 60px;*/
+
+    /*文本对齐方式 center、left、right、justify*/
+    /*text-align: center;*/
+
+    /*文本的修饰，例如：下划线 none、underline、overline、line-through*/
+    /*text-decoration: underline;*/
+
+    /*文本设置阴影 h-shadow v-shadow blur color*/
+    /*text-shadow: 2px 2px 20px pink;*/
+
+    /*改变字母大小写 none、capitalize、uppercase、lowercase*/
+    /*text-transform: uppercase;*/
+
+    /*首行缩进*/
+    text-indent: 2em;
+
+    /*设置字体*/
+    /*font-family: "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1";*/
+
+    /*规定斜体文本 normal、italic、oblique*/
+    /*font-style: oblique;*/
+
+    /*文本的粗细 normal、bold、100-900*/
+    /*font-weight: bold;*/
+
+    /*字体的大小*/
+    /*font-size: 14px;*/
+}
+
+.title {
+    text-align: center;
+}
+
+.content {
+    font-family: Kai;
+}
+
+body {
+    margin-left: 33%;
+    margin-right: 33%;
+    background-color: #cccccc;
+    /*background-image: url("../images/background.jpg");*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+}
+
+ul {
+    list-style-type: circle;
+    list-style-position: inside;
+    /*list-style-image: url("../images/avatar/1.gif");*/
+}
+
+ol {
+    list-style-type: lower-latin;
+    list-style-position: inside;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    font-size: 20px;
+    color: yellow;
+}
+
+a:active {
+    color: blue;
+}
+
+label:hover {
+    color: red;
+}
+
+input:focus {
+    background-color: #00a9e0;
+}
+
+li:first-child {
+    background-color: #00a9e0;
+}
+
+li:last-child {
+    background-color: #892bcf;
+}
+
+li:nth-child(3) {
+    background-color: #5bc92e;
+}
+
+/*伪元素选择器*/
+li::before {
+    content: "💰";
+}
+
+li::after {
+    content: "⚠️";
+}
+
+p::selection {
+    background-color: #6abeea;
+}
+
+#wuchang {
+    color: red;
+}
+
+/** {*/
+/*    font-size: 80px;*/
+/*}*/
