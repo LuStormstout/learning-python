@@ -1,0 +1,23 @@
+#content {
+    background-color: #07a6b7;
+    width: 150px;
+    height: 150px;
+    top: 150px;
+    left: 150px;
+    position: absolute;
+    overflow: hidden;
+    /*outline: dashed;*/
+    border-bottom: solid;
+}
+
+#input-div {
+    top: 150px;
+    left: 350px;
+    position: absolute;
+}
+
+#username {
+    outline: none;
+    border: none;
+    border-bottom: solid;
+}
