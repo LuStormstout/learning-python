@@ -1,0 +1,35 @@
+div {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+#div1 {
+    background-color: #07a6b7;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-right: 20px;
+
+    /*
+        属性 box-sizing：padding 的距离是由哪里产生的
+        属性值1 content-box：在宽度和高度之外绘制元素的内边距和边框（整体变大了）
+        属性值2 border-box：已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度（整体大小不变）
+    */
+    box-sizing: border-box;
+}
+
+#div2 {
+    background-color: #626262;
+}
+
+* {
+    margin: 0 0;
+}
+
+#div3 {
+    background-color: tan;
+    text-align: center;
+    line-height: 200px;
+    margin: 20px auto 0;
+}
