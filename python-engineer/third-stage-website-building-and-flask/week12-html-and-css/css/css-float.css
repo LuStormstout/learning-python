@@ -21,3 +21,39 @@
     border: none;
     border-bottom: solid;
 }
+
+#div1, #div2, #div3 {
+    width: 200px;
+    height: 200px;
+}
+
+#div1 {
+    background-color: yellow;
+
+    /* 脱离标准文档流 脱标流 浮动 */
+    float: left;
+}
+
+#div2 {
+    background-color: #626262;
+    float: left;
+}
+
+#div3 {
+    background-color: #6abeea;
+    float: left;
+}
+
+#div4 {
+    margin-left: 800px;
+    border: 1px solid black;
+    background-color: red;
+    /*height: 300px;*/
+    /*width: 450px;*/
+}
+
+#div5 {
+    background-color: yellow;
+    height: 230px;
+    width: 450px;
+}
