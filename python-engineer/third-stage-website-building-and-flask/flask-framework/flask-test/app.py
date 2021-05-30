@@ -4,6 +4,10 @@ from flask import Flask, render_template, current_app, g, request, session, make
     redirect, abort
 
 app = Flask(__name__)
+# 为模板引擎添加扩展，支持 break/continue
+app.jinja_env.add_extension('jinja2.ext.loopcontrols')
+
+""" Flask 框架入门 """
 
 
 @app.route('/index')
@@ -39,10 +43,10 @@ def hello():
 
 
 # 传递和接收参数以及默认值
-@app.route('/user')
-@app.route('/user/<page>')
-def list_user(page=1):
-    return '你好，你是第 {} 页用户'.format(page)
+# @app.route('/user')
+# @app.route('/user/<page>')
+# def list_user(page=1):
+#     return '你好，你是第 {} 页用户'.format(page)
 
 
 # app.add_url_rule('/home', 'home', hello_world)
@@ -158,6 +162,68 @@ def forbidden_page(err):
     print(err)
     return '你没有权限访问，请联系管理员。'
 
+
 # 不推荐的写法
 # if __name__ == '__main__':
 #     app.run()
+
+
+""" Flask 模板语法与继承 """
+
+
+# 模板标签的练习
+@app.route('/template/test')
+def template_test():
+    # 1、简单的数据类型的渲染
+    age = 23
+    money = 65.32
+    name = '张三丰'
+
+    # 2、dict 数据类型的渲染
+    #   {{ object.attribute }} 或 {{ object['attribute'] }}
+    userinfo = {
+        'username': '关羽',
+        'nickname': '二哥',
+        'address.city': '荆州市',
+        'address.area': '朝阳区'
+    }
+
+    # 3、元组和列表（tuple/list）数据类型的渲染
+    tuple_city = ('北京', '上海', '广州', '深圳', '杭州', '成都')
+    list_city = ['北京', '上海', '广州', '深圳', '杭州', '成都']
+
+    # 4、list/tuple 嵌套 dict 复杂数据类型的渲染
+    user_list = [
+        {
+            'username': '刘备',
+            'address': {
+                'city': '成都'
+            },
+        },
+        {
+            'username': '曹操',
+            'address': {
+                'city': '洛阳'
+            },
+        },
+        {
+            'username': '孙权',
+            'address': {
+                'city': '南京'
+            },
+        },
+    ]
+
+    # 模板标签的使用
+    var = None
+    a = 2
+    user_list_loop = [
+        {'username': '刘备', 'age': '45', 'address': '成都'},
+        {'username': '曹操', 'age': '52'},
+        {'username': '张三', 'age': '18', 'address': '北京'},
+        {'username': '李四', 'age': '21'}
+    ]
+
+    return render_template('template-tag-test.html', age=age, money=money, name=name, userinfo=userinfo,
+                           tuple_city=tuple_city, list_city=list_city, user_list=user_list, var=var, a=a,
+                           user_list_loop=user_list_loop)

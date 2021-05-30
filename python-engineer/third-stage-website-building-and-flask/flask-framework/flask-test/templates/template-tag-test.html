@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask 模板语法与继承</title>
+    <style type="text/css">
+        .odd {
+            background-color: #565656;
+            color: #fff;
+        }
+
+        .even {
+            background-color: #000000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <h3>1、简单的数据类型的渲染</h3>
+        <p>年龄：{{ age }}</p>
+        <p>钱包：{{ money }}</p>
+        <p>姓名：{{ name }}</p>
+
+        <h3>2、dict 数据类型的渲染</h3>
+        <p>用户名：{{ userinfo.username }}</p>
+        <p>昵称：{{ userinfo.nickname }}</p>
+        <p>地址：{{ userinfo['address.city'] }} - {{ userinfo['address.area'] }}</p>
+    </div>
+
+    <div>
+        <h3>3、元组和列表（tuple/list）数据类型的渲染</h3>
+        <ul>
+            <li>tuple city</li>
+            <li>{{ tuple_city[0] }}</li>
+            <li>{{ tuple_city[1] }}</li>
+            <li>{{ tuple_city[2] }}</li>
+            <li>{{ tuple_city[3] }}</li>
+            <li>{{ tuple_city[4] }}</li>
+            <li>{{ tuple_city[5] }}</li>
+        </ul>
+        <ul>
+            <li>list city</li>
+            {% for city in list_city %}
+                <li>{{ city }}</li>
+            {% else %}
+                <li>list city 为空，暂无数据。</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div>
+        <h3>4、list/tuple 嵌套 dict 复杂数据类型的渲染</h3>
+        <p>魏国：{{ user_list[1].username }} - {{ user_list[1]['address']['city'] }}</p>
+        <p>蜀国：{{ user_list[0].username }} - {{ user_list[0]['address']['city'] }}</p>
+        <p>吴国：{{ user_list[2].username }} - {{ user_list[2]['address']['city'] }}</p>
+    </div>
+</div>
+
+<hr>
+
+<div>
+    <h3>模板标签的使用</h3>
+    <h4>判断语句</h4>
+    {% if var is none %}
+        <p>var 是 None</p>
+    {% else %}
+        <p> var 不是 None</p>
+    {% endif %}
+
+    {% if a is defined %}
+        <p>变量 a 定义了</p>
+    {% else %}
+        <p>变量 a 未定义</p>
+    {% endif %}
+
+    {% if a == 2 %}
+        <p>变量 a 的值为 2</p>
+    {% endif %}
+
+    <h4>for 循环的使用</h4>
+    {% for user in user_list_loop %}
+        <p>姓名：{{ user.username }}, 年龄：{{ user.age }}</p>
+    {% else %}
+        <p>用户信息为空！</p>
+    {% endfor %}
+
+    {#    for 循环体内的变量#}
+    {#    loop.index 当前循环迭代的次数（从 1 开始）#}
+    {#    loop.index0 当前循环迭代的次数（从 0 开始）#}
+    {#    loop.revindex 到循环结束需要迭代的次数（从 1 开始）#}
+    {#    loop.revindex0 到循环结束需要迭代的次数（从 0 开始）#}
+    {#    loop.first 如果是第一次迭代是 True#}
+    {#    loop.last 如果是最后一次迭代 True#}
+    {#    loop.length 序列的长度#}
+    {#    loop.cycle 在一串序列期间取值的辅助函数#}
+    {% for user in user_list_loop %}
+        <p class="{{ loop.cycle('odd', 'even') }}">
+            总共 {{ loop.length }} 个用户，第 {{ loop.index }} 个用户: <br>
+            {% for key, value in user.items() %}
+                <span>{{ key }}：{{ value }}，</span>
+            {% endfor %}
+        </p>
+    {% endfor %}
+
+    <h4>for 循环的使用 - break</h4>
+    {% for user in user_list_loop -%}
+        <p class="{{ loop.cycle('odd', 'even') }}">
+            总共 {{ loop.length }} 个用户，第 {{ loop.index }} 个用户: <br>
+            {% for key, value in user.items() -%}
+                {% if loop.length > 2 -%}
+                    {% break -%}
+                {% endif -%}
+                <span>{{ key }}：{{ value }}，</span>
+            {% endfor -%}
+        </p>
+    {% endfor -%}
+
+    {#    去除 HTML 中多余的空白-#}
+    {#    在块的开始或结束放置一个减号（-），不能有空格-#}
+
+    <h3>赋值的使用</h3>
+    {#    这是变量，赋值操作#}
+    {#    现设置，后使用，可以通过 import 导入#}
+    {#    {% set key, value = (1, 2) %}#}
+    {#    使用 with 代码块，实现块级作用域#}
+    {#    {% with %}#}
+    {#        {% set value = 42 %}#}
+    {#        {{ value }} 只在代码块中有效#}
+    {#    {% endwith %}#}
+    {% with %}
+        {% set temp = 43 %}
+        {{ temp }}
+    {% endwith %}
+    <p>在 with 之外 {{ temp }}</p>
+
+    <h3>模板语法的转义</h3>
+    {{ '{{', '{%  %}' }} <br>
+    {% raw %}
+    {% with %}
+    {% set temp = 43 %}
+    {{ temp }}
+    {% endwith %}
+    {% endraw %}
+
+</div>
+</body>
+</html>
