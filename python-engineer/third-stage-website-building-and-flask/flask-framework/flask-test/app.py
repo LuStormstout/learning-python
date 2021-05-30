@@ -172,8 +172,8 @@ def forbidden_page(err):
 
 
 # 模板标签的练习
-@app.route('/template/test')
-def template_test():
+@app.route('/template/tag')
+def template_tag():
     # 1、简单的数据类型的渲染
     age = 23
     money = 65.32
@@ -224,6 +224,6 @@ def template_test():
         {'username': '李四', 'age': '21'}
     ]
 
-    return render_template('template-tag-test.html', age=age, money=money, name=name, userinfo=userinfo,
+    return render_template('template-tag.html', age=age, money=money, name=name, userinfo=userinfo,
                            tuple_city=tuple_city, list_city=list_city, user_list=user_list, var=var, a=a,
                            user_list_loop=user_list_loop)
