@@ -227,3 +227,60 @@ def template_tag():
     return render_template('template-tag.html', age=age, money=money, name=name, userinfo=userinfo,
                            tuple_city=tuple_city, list_city=list_city, user_list=user_list, var=var, a=a,
                            user_list_loop=user_list_loop)
+
+
+""" 
+    模版语法之过滤器
+    过滤器：修改变量（如：格式化显示）
+    用管道符号（｜）分割 {{ name|striptags }}
+    可以链式调用 {{ name|striptags|title }}
+    可以用圆括号传递可选参数 {{ list|join(',') }}
+    使用：
+        用管道符号（｜）
+            {{ value|safe }}
+        使用标签
+            {% filter upper %}
+                This text becomes uppercase
+            {% endfilter %}
+            
+    内置的过滤器
+        求绝对值
+            {{ value|abs }}
+        默认值显示 default(value, default_value='', boolean=False)
+            {{ value|default('默认值') }}
+            {{ value|d('默认值') }} 简写方式
+        HTML 转义
+            {{ value|escape }} 或 {{ value|e }}
+        富文本内容的转义显示
+            {{ value|safe }}
+        倒序显示
+            {{ value|reverse }}
+            
+    自定义过滤器
+        使用装饰器注册
+            @app.template_filter('reverse')
+            def reverse_filter(s):
+                return s[::-1]
+        调用函数注册
+            def reverse_filter(s):
+                return s[::-1]
+            app.jinja_env.filters['reverse'] = reverse_filter
+    
+"""
+
+
+@app.route('/template/filter')
+def template_filter():
+    welcome = 'Hello Lu Stormstout'
+    var = None
+    html_value = '<h2>这是 H2 标签</h2>'
+    phone_number = '12312345678'
+    return render_template('template-filter.html', welcome=welcome, var=var, html_value=html_value,
+                           phone_number=phone_number)
+
+
+@app.template_filter('phone_format')
+def phone_format(phone_number):
+    """ 电话号码脱敏处理过滤器 """
+    # 12312345678 -> 123****5678
+    return phone_number[0:3] + '****' + phone_number[7:]

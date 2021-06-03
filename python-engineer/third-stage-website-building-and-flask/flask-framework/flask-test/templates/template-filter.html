@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器的使用</title>
+</head>
+<body>
+<h3>不使用过滤器</h3>
+<p>{{ welcome }}</p>
+<h3>使用过滤器</h3>
+<p>{{ welcome|upper }}</p>
+<h3>标签 使用过滤器</h3>
+<p>
+    {% filter upper %}
+        {{ welcome }}
+    {% endfilter %}
+</p>
+<h3>默认值 default 过滤器的使用</h3>
+<p>var: {{ var|default('这是默认值！', True) }}</p>
+<h3>HTML 转义过滤器的使用</h3>
+{% autoescape false %}
+<p>{{ html_value }}</p>
+<p>{{ html_value|e() }}</p>
+{% endautoescape %}
+
+<h3>自定义过滤器的使用</h3>
+<p>电话号码脱敏处理结果：{{ phone_number|phone_format }}</p>
+</body>
+</html>
