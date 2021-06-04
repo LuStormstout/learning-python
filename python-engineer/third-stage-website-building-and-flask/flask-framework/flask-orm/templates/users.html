@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+<h3>总共有 {{ user_page_data.total }} 用户 - 总共有{{ user_page_data.pages }}页 - 当前在第 {{ user_page_data.page }} 页</h3>
+<p>用户列表：</p>
+<ul>
+    {% for user in user_page_data.items %}
+        <li>{{ user.username }} - {{ user.password }}</li>
+    {% endfor %}
+</ul>
+{% if user_page_data.has_prev %}
+    <a href="{{ url_for('users', page=user_page_data.prev_num) }}">上一页</a>
+{% endif %}
+{% if user_page_data.has_next %}
+    <a href="{{ url_for('users', page=user_page_data.next_num) }}">下一页</a>
+{% endif %}
+</body>
+</html>
