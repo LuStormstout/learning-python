@@ -284,3 +284,9 @@ def phone_format(phone_number):
     """ 电话号码脱敏处理过滤器 """
     # 12312345678 -> 123****5678
     return phone_number[0:3] + '****' + phone_number[7:]
+
+
+@app.route('/template/global-func')
+def global_func():
+    """ 模板全局函数的使用 """
+    return render_template('global_func.html')

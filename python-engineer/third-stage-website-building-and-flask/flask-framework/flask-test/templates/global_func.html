@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板全局函数的使用</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style type="text/css">
+        .row1 {
+            color: #ff0000;
+        }
+
+        .row2 {
+            color: #0000ff;
+        }
+
+        .row3 {
+            background-color: aquamarine;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+
+{#模板全局函数#}
+{#range([start], stop[, step])#}
+{#dict(**items)#}
+{#cycler(*items) 可用于 css 类名的循环#}
+{#joiner(sep=',') 可用于字符串拼接#}
+{#url_for() URL 解析函数（如：静态文件地址解析、链接跳转地址解析）#}
+
+<h3>url_for 的使用</h3>
+<a href="{{ url_for('index') }}">回到首页</a>
+<a href="{{ url_for('template_tag') }}">模板标签页面</a>
+
+<h3>range 函数</h3>
+{% for i in range(5) %}
+    <p>{{ i }}</p>
+{% endfor %}
+
+<h3>cycler 的使用</h3>
+{% set class_name = cycler('row1', 'row2', 'row3') %}
+{% for i in range(100) %}
+    <p class="{{ class_name.next() }}">{{ i }}</p>
+{% endfor %}
+
+</body>
+</html>
