@@ -290,3 +290,29 @@ def phone_format(phone_number):
 def global_func():
     """ 模板全局函数的使用 """
     return render_template('global_func.html')
+
+
+""" 
+  什么是宏：
+    把常用的功能抽出来，可实现重用
+    简单理解 宏 约等于 函数
+    宏可以写在单独的 HTML 文件中
+  模板中的宏
+    像写函数一样定义宏
+    {% macro input(name, value='', type='text', size=20) -%}
+        <input type="{{ type }}" name="{{ name }}" value="{{ value|e }}" size="{{ size }}">
+    {%- endmacro %}
+    
+  文件中的宏
+    将前面定义的宏保存为 forms.html
+    导入
+        {% import 'forms.html' as forms %}
+        {% from 'forms.html' import input %}
+    使用 <p>{{ forms.input('username') }}</p>
+"""
+
+
+@app.route('/template/macro')
+def macro():
+    """ 模板中宏的使用 """
+    return render_template('macro.html')

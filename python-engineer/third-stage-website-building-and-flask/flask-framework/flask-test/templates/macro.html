@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>模板中宏的使用</title>
+    <style type="text/css">
+        .input-control {
+            border: 1px solid #0000ff;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    {% from 'forms.html' import input %}
+    <p>{{ input(label='用户名', name='username') }}</p>
+    <p>{{ input(label='密码', name='password', type='password') }}</p>
+    <p>{{ input(label='年龄', name='age') }}</p>
+
+    {#    <div>#}
+    {#        <label for="username">用户名：</label>#}
+    {#        <input class="input-control class2" type="text" name="username" id="username" value="">#}
+    {#    </div>#}
+    {#    <div>#}
+    {#        <label for="password">密码：</label>#}
+    {#        <input class="input-control class2" type="password" name="password" id="password" value="">#}
+    {#    </div>#}
+    {#    <div>#}
+    {#        <label for="age">年龄：</label>#}
+    {#        <input class="input-control class2" type="number" name="age" id="age" value="">#}
+    {#    </div>#}
+</form>
+</body>
+</html>
