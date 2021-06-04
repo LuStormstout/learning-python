@@ -316,3 +316,85 @@ def global_func():
 def macro():
     """ 模板中宏的使用 """
     return render_template('macro.html')
+
+
+"""
+    Flask 模板语法与继承
+    一、将可变的部分圈出来 (base.html)
+        {% block content %}
+            <!-- 内容区域 -->
+        {% endblock %}
+        
+    二、继承父模板
+        {% extends 'base.html' %}
+        
+    三、填充新的内容
+        {% extends 'base.html' %}
+        {% block content %}
+            <!-- 新的内容 -->
+        {% endblock %}
+    四、复用父模板的内容
+        {% extends 'base.html' %}
+        {% block header %}
+            {{ super() }}
+            <!-- 新的菜单内容 -->
+        {% endblock %}
+        
+    Flask 模板包含实现
+        一、将可变的部分拆出来 (sidebar.html)
+            <div>
+                这是右侧公共的部分
+            </div>
+        二、将拆出来的部分包进来 (index.html)
+            {% extends 'base.html' %}
+            {% block content %}
+                <!-- 页面主要内容区域 -->
+                
+                {# 公用的区域 #}
+                {% include 'sidebar.html' %}
+            {% endblock %}
+            
+    Flask 模板中的代码复用
+        当前页面的代码复用
+            <title>{% block title %}{% endblock %}</title>
+            <h1>{{ self.title() }}</h1>
+            {% block content %}
+            {% endblock %}
+            
+    相关的模板标签
+        {% block sidebar %} {% endblock %}  命名代码块
+        {% extends 'base.html' %}           继承模板
+        {% include 'header.html' %}         包含代码块
+            
+"""
+
+
+@app.route('/extends')
+def template_extends_index():
+    """  首页 """
+    return render_template('extends/index.html')
+
+
+@app.route('/extends/course')
+def course():
+    """  免费课程 """
+    return render_template('extends/course.html')
+
+
+@app.route('/extends/coding')
+def coding():
+    """  实战课程 """
+    return render_template('extends/coding.html')
+
+
+@app.route('/extends/article')
+def article():
+    """  手记 """
+    return render_template('extends/article.html')
+
+
+@app.route('/extends/wenda')
+def wenda():
+    """  问答页面 """
+    question = 'why?'
+    return render_template('extends/wenda.html', question=question)

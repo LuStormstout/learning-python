@@ -1,0 +1,18 @@
+{% extends 'extends/base.html' %}
+{% block title_txt %}学习网{% endblock %}
+{% block content %}
+    <aside class="left">
+        左侧内容区域--问答
+    <p>{{ self.title_txt() }}</p>
+    </aside>
+    <aside class="right">
+        右侧内容区域--问答
+        <p>问题：{{ question }}</p>
+        <p>{{ self.title_txt() }}</p>
+
+        {# ignore missing 忽略加载不到的错误 #}
+        {# without context 不把上下文对象传递到要引入的页面中 question 就不会被传递到 sidebar.html 页面中了 #}
+        {# with context 会携带当前上下文对象的内容 #}
+        {% include 'extends/sidebar.html' ignore missing without context %}
+    </aside>
+{% endblock %}

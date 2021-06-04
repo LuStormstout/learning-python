@@ -1,0 +1,10 @@
+{% extends 'extends/base.html' %}
+{% block content %}
+    <aside class="left">
+        左侧内容区域--手记
+    </aside>
+    <aside class="right">
+        右侧内容区域-- 手记
+        {% include 'extends/sidebar.html' ignore missing %}
+    </aside>
+{% endblock %}
