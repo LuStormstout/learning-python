@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <style type="text/css">
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .warning {
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+<h3>个人中心</h3>
+{% for category, message in get_flashed_messages(with_categories=true, category_filter=['success']) %}
+    <p class="{{ category }}">{{ category }} - {{ message }}</p>
+{% endfor %}
+
+{% for category, message in get_flashed_messages(with_categories=true, category_filter=['error']) %}
+    <h3>展示错误信息</h3>
+    <p class="{{ category }}">{{ category }} - {{ message }}</p>
+{% endfor %}
+
+</body>
+</html>

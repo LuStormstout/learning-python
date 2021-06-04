@@ -1,11 +1,13 @@
 # coding:utf-8
 
 from flask import Flask, render_template, current_app, g, request, session, make_response, \
-    redirect, abort
+    redirect, abort, flash
 
 app = Flask(__name__)
 # 为模板引擎添加扩展，支持 break/continue
 app.jinja_env.add_extension('jinja2.ext.loopcontrols')
+# session secret_key
+app.secret_key = 'pA74dpHu58EVkyPx!nyiNRP8w@3J2Dsp'
 
 """ Flask 框架入门 """
 
@@ -398,3 +400,42 @@ def wenda():
     """  问答页面 """
     question = 'why?'
     return render_template('extends/wenda.html', question=question)
+
+
+"""
+    消息闪现
+        一、在视图中产生一个消息（提示/警告/错误）
+            flash(message_content, message_type)
+            参数 message_content  消息内容
+            参数 message_type     消息类型
+        二、在模板中展示消息
+            get_flashed_messages(category_filter=['error'])
+            参数 category_filter 对产生的消息类型按类别查询
+            <ul>
+                {% for category, message in get_flashed_messages(with_categories=true) %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+"""
+
+
+#  用户登录之后，跳转到个人中心页面，在个人中心页面，展示一个提示（登录成功）
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    """ 用户登录 """
+    if request.method == 'POST':
+        print('处理了登录的逻辑')
+        flash('登录成功', 'success')
+        flash('欢迎回来', 'success')
+        flash('错误提示', 'error')
+        return redirect('/mine')
+    else:
+        return render_template('login.html')
+
+
+@app.route('/mine')
+def mine():
+    """ 个人中心 """
+    return render_template('mine.html')

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+</head>
+<body>
+<h3>登录页面</h3>
+<form action="{{ url_for('login') }}" method="post">
+    <div>
+        <label>用户名：
+            <input type="text" name="username">
+        </label>
+    </div>
+    <div>
+        <label>密码：
+            <input type="password" name="password">
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="submit" value="登 录">
+        </label>
+    </div>
+</form>
+</body>
+</html>
