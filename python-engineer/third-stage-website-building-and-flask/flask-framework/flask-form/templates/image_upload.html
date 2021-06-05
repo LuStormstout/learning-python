@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+</head>
+<body>
+<form action="{{ url_for('image_upload') }}" method="post" enctype="multipart/form-data">
+    <div>
+        <label> 文件一
+            <input type="file" name="file1">
+        </label>
+    </div>
+    <div>
+        <label> 文件二
+            <input type="file" name="file2">
+        </label>
+    </div>
+    <div>
+        <input type="submit" value="开始上传">
+    </div>
+</form>
+</body>
+</html>
