@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>在线问答系统-文章详情</title>
+
+  <!-- Bootstrap -->
+  <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+  <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+  <!--[if lt IE 9]>
+    <script src="../assets/plugins/html5shiv.min.js"></script>
+    <script src="../assets/plugins/respond.min.js"></script>
+    <![endif]-->
+  <link rel="stylesheet" href="../assets/style/common.css">
+  <link rel="stylesheet" href="../assets/style/detail.css">
+</head>
+
+<body class="layout">
+  <!-- 顶部导航 -->
+  <div class="layout-header">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#id-index-banner"
+            aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">在线问答系统</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="id-index-banner">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">话题</a></li>
+          </ul>
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="搜索话题">
+            </div>
+            <button type="submit" class="btn btn-default">搜索</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">提问</a></li>
+            <li><a href="#">消息</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">个人中心 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="mine.html">我的主页</a></li>
+                <li><a href="mine.html">设置</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">退出</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  <!-- // 顶部导航 -->
+
+  <!-- 问题简述 -->
+  <div class="layout-question">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <!-- 问题标签 -->
+          <ul class="que-tag-ls">
+            <li><a href="#">心理学</a></li>
+            <li><a href="#">经济学</a></li>
+            <li><a href="#">大数据</a></li>
+            <li><a href="#">大数据分析</a></li>
+            <li><a href="#">新型冠状病毒</a></li>
+          </ul>
+          <!-- // 问题标签 -->
+          <h3>疫情结束后会爆发消费狂潮吗？</h3>
+          <div class="show-desc hidden">
+            27日，广州市政府新闻办在广州医科大学举办疫情防控专场新闻通气会，国家卫健委高级别专家组组长、国家呼吸系统疾病临床医学研究中心主任钟南山谈到疫情的预测…
+            <span class="btn-show-more">显示全部<i class="glyphicon glyphicon-menu-down"></i></span>
+          </div>
+          <div class="show-all ">
+            27日，广州市政府新闻办在广州医科大学举办疫情防控专场新闻通气会，国家卫健委高级别专家组组长、国家呼吸系统疾病临床医学研究中心主任钟南山谈到疫情的预测时表示，疫情开始时，国外有流行病学家用权威的试验模型，预测2月初，中国感染新冠肺炎人数将达16万人。钟南山说：“这是没有考虑到国家的强力干预，也没有考虑春节后的延迟复工，我们也做了预测模型，2月中旬或下旬达到疫情高峰，确诊病例约六、七万人，投到国外权威期刊，被退了回来，感觉和上面的预测水平差太多，还有人给我微信‘你的话几天之内就会被碾个粉碎’。但事实上，我们预测更接近权威。”
+            <span class="btn-show-less">收起<i class="glyphicon glyphicon-menu-up"></i></span>
+          </div>
+          <!-- 菜单栏 -->
+          <div class="qa-footer">
+            <div>
+              <button type="button" class="btn btn-info btn-sm">关  注</button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#addComment">写回答</button>
+            </div>
+            <div class="txt-menu"><i class="glyphicon glyphicon-comment"></i> 113条评论</div>
+            <div class="txt-menu"><i class="glyphicon glyphicon-send"></i>分享</div>
+            <div class="txt-menu"><i class="glyphicon glyphicon-flag"></i>举报</div>
+            <div class="txt-menu"></div>
+            <div class="txt-menu btn-group">
+              <i class="glyphicon glyphicon-option-horizontal dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false"></i>
+              <ul class="dropdown-menu">
+                <li><a href="#">不感兴趣</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- //菜单栏 -->
+        </div>
+        <div class="col-md-3">
+          <div class="que-stats-box">
+            <!-- 关注者 -->
+            <div>
+              <span>关注者</span>
+              <strong>18,158</strong>
+            </div>
+            <!-- //关注者 -->
+            <!-- 被浏览 -->
+            <div>
+              <span>被浏览</span>
+              <strong>26,233,256</strong>
+            </div>
+            <!-- //被浏览 -->
+          </div>
+        </div>
+      </div><!-- // row -->
+    </div>
+  </div>
+  <!-- // 问题简述 -->
+
+  <div class="layout-answer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 left-content">
+          <a class="link-more" href="#">查看全部 6,660 个回答</a>
+          <!-- 回答内容区域 -->
+          <div class="answer-content box-wrap">
+            <div class="user-info">
+              <div class="avater">
+                <img src="../assets/home/qa/user_head.jpg" alt="用户头像">
+              </div>
+              <div class="desc">
+                <h4>舒大克</h4>
+                <p>《互联网营销人实战手记》新书上市； 公众号：舒大克。</p>
+              </div>
+            </div>
+            <div class="answer-stats">5,550 人赞同了该回答</div>
+            <div class="answer-txt">
+              <p>不会，因为这次疫情和当年非典时候很不一样。</p>
+              <p>2003年非典过后，不说别的行业，但当年的餐饮业、娱乐业、旅游业确实是有较大的反弹的。</p>
+              <p>
+                根据餐饮行业协会数据，2003年全国餐饮市场规模相比于2002年，增长了11.3%。考虑到2003年前半年非典对餐饮市场的打击（当时北京70%餐厅关门），这个数字证明在非典结束后一段时间里，在吃吃吃这件事情上，大家还是疯狂了一把的。
+              </p>
+              <p>我家有亲戚就是当时在浙江宁波开大型娱乐城，包含餐饮、ktv、洗脚按摩和棋牌等等的项目。反正当时的情况就是，在非典快结束的时候（差不多五月份），预定电话已经被打爆，一直排到了三个月后。。。
+              </p>
+              <p>中国人民在聚众吃饭、聚众娱乐、聚众玩耍这些事情上，还是很热情很疯狂的。</p>
+              <p>不过，今年和2003年又有很大不同。</p>
+              <p>其一、2003年，中国经济处于亚洲金融风暴后又一轮上升区间里。1998年至2007年连续十年高速增长且增速几乎一直升高。</p>
+              <p>而且，2001年，中国刚刚加入世贸组织，创造了大量的就业机会，普通人的消费能力在当时极大提升。</p>
+              <p>2003，虽然非典造成了数以千亿的损失，但由于中国经济正处在黄金发展期，当年GDP增长仍高达10%，比2002年还高出0.9%。</p>
+              <p>而现在，中国经济正正在进入所谓“新常态”，换句话说也就是经济增长没那么快了，2020年gdp增长很有可能跌破6%。</p>
+              <p>而且，中国加入世贸组织的红利已经接近枯竭，2003年那时候，欧美大国们还愿意与中国一起发大财，但现如今，大部分发达国家都在逐渐收回资本----</p>
+              <p>一切都导致人们的工作机会越来越少，收入预期也越来越低，反应在消费上，就是消费信心越来越低，大家的危机感越来越重强。</p>
+              <p class="ztext-empty-paragraph"><br></p>
+              <p>就算我们有钱，宁可存着，也不太会出现报复性消费了，万一下次又有大危机呢？在危机面前，现金才是王道。</p>
+              <p>其二、当前的疫情防控级别是远高于2003年“非典”期间，人们对疫情的恐慌程度也远高于2003年。</p>
+              <p>昨天晚饭时候，我爸妈说起，他们活了50多年，也是第一次遇到这种全国街道上空无一人的情况。</p>
+              <p>在2003年，除了北京和广州几个重点区域，全国并没有所谓的封城、封路、封村等等动作。</p>
+              <p>而今天，全国的疫情的防控等级都极高。</p>
+              <p>无限期的延迟复工，其实对互联网行业影响有限，遭受更大打击的还是吸收了最大量就业人口的传统行业：从农业牲畜养殖到高端新品制造，都受到了毁灭性的破坏。</p>
+              <p>再者，今年的互联网技术和2003年相比，已经不可同日而语。</p>
+              <p>互联网技术爆炸，让资讯流通爆炸，也让今年人们的恐慌程度远高于2003年。</p>
+              <p>在2003年，绝大部分人其实对sars感觉不明显，毕竟全国也就这么几千例。</p>
+              <p>再加上当时的主要媒体天天播送的都是正能量新闻，人们都没有觉得事情有多么严重，依然希望出去吃喝玩乐。</p>
+              <p>而今年，恐慌似乎伴随着每一个中国人，人们对于“”线下集聚”这件事情，在心理上产生了巨大阴影。</p>
+              <p>这种心理的恐惧，不会随着疫情解除而立马消失，而会有一个较长的惯性期。</p>
+              <p>这种惯性，或许会让人们的消费信心，在很长一段时间里，都无法复苏。</p>
+            </div>
+            <div class="answer-time">发布于昨天 17:18</div>
+            <!-- 底部菜单 -->
+            <div class="qa-footer">
+              <div><button type="button" class="btn btn-info btn-sm">
+                  <i class="glyphicon glyphicon-thumbs-up"></i> 赞同 1780</button>
+                <button type="button" class="btn btn-info btn-sm"><i
+                    class="glyphicon glyphicon-thumbs-down"></i></button>
+              </div>
+              <div class="txt-menu"><i class="glyphicon glyphicon-comment"></i> 113条评论</div>
+              <div class="txt-menu"><i class="glyphicon glyphicon-send"></i>分享</div>
+              <div class="txt-menu"><i class="glyphicon glyphicon-heart"></i>收藏</div>
+              <div class="txt-menu"><i class="glyphicon glyphicon-flag"></i>举报</div>
+              <div class="txt-menu"></div>
+              <div class="txt-menu btn-group">
+                <i class="glyphicon glyphicon-option-horizontal dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"></i>
+                <ul class="dropdown-menu">
+                  <li><a href="#">不感兴趣</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- // 底部菜单 -->
+            <!-- 评论框 -->
+            <div class="comment-box box-wrap">
+              <!-- 统计和菜单 -->
+              <div class="comment-stats">
+                <div class="title">8条评论</div>
+                <div class="menu"><i class="glyphicon glyphicon-random"></i>切换为时间顺序</div>
+              </div>
+              <!-- // 统计和菜单 -->
+              <!-- 评论列表 -->
+              <div class="comment-ls">
+                <div class="comment-item">
+                  <div class="header">
+                    <div class="user-info">
+                      <img class="avater" src="../assets/home/qa/user_head.jpg" alt="">
+                      <strong class="uname">用户昵称</strong>
+                    </div>
+                    <div class="time">2小时前</div>
+                  </div>
+                  <div class="body">
+                    不能这么说，是他们的眼界让他们不能接受。现在中国做到的事是让他们世界观崩塌的事[飙泪笑][飙泪笑]
+                  </div>
+                  <div class="footer">
+                    <div><i class="glyphicon glyphicon-thumbs-up"></i> 5</div>
+                    <div><i class="glyphicon glyphicon-share-alt"></i> 回复</div>
+                    <div><i class="glyphicon glyphicon-thumbs-down"></i> 踩</div>
+                    <div><i class="glyphicon glyphicon-flag"></i> 举报</div>
+                  </div>
+                  <!-- 输入框 -->
+                  <form class="form-horizontal comment-publish">
+                    <input type="text" class="form-control" placeholder="写下你的评论...">
+                    <button type="button" class="btn btn-default btn-grey">发布</button>
+                  </form>
+                  <!-- // 输入框 -->
+                </div>
+                <div class="comment-item">
+                  <div class="header">
+                    <div class="user-info">
+                      <img class="avater" src="../assets/home/qa/user_head.jpg" alt="">
+                      <strong class="uname">用户昵称</strong>
+                    </div>
+                    <div class="time">2小时前</div>
+                  </div>
+                  <div class="body">
+                    不能这么说，是他们的眼界让他们不能接受。现在中国做到的事是让他们世界观崩塌的事[飙泪笑][飙泪笑]
+                  </div>
+                  <div class="footer">
+                    <div><i class="glyphicon glyphicon-thumbs-up"></i> 5</div>
+                    <div><i class="glyphicon glyphicon-share-alt"></i> 回复</div>
+                    <div><i class="glyphicon glyphicon-thumbs-down"></i> 踩</div>
+                    <div><i class="glyphicon glyphicon-flag"></i> 举报</div>
+                  </div>
+                  <!-- 输入框 -->
+                  <form class="form-horizontal comment-publish hidden">
+                    <input type="text" class="form-control" placeholder="写下你的评论...">
+                    <button type="button" class="btn btn-default btn-grey">发布</button>
+                  </form>
+                  <!-- // 输入框 -->
+                </div>
+                <div class="comment-item">
+                  <div class="header">
+                    <div class="user-info">
+                      <img class="avater" src="../assets/home/qa/user_head.jpg" alt="">
+                      <strong class="uname">用户昵称</strong>
+                    </div>
+                    <div class="time">2小时前</div>
+                  </div>
+                  <div class="body">
+                    不能这么说，是他们的眼界让他们不能接受。现在中国做到的事是让他们世界观崩塌的事[飙泪笑][飙泪笑]
+                  </div>
+                  <div class="footer">
+                    <div><i class="glyphicon glyphicon-thumbs-up"></i> 5</div>
+                    <div><i class="glyphicon glyphicon-share-alt"></i> 回复</div>
+                    <div><i class="glyphicon glyphicon-thumbs-down"></i> 踩</div>
+                    <div><i class="glyphicon glyphicon-flag"></i> 举报</div>
+                  </div>
+                  <!-- 输入框 -->
+                  <form class="form-horizontal comment-publish hidden">
+                    <input type="text" class="form-control" placeholder="写下你的评论...">
+                    <button type="button" class="btn btn-default btn-grey">发布</button>
+                  </form>
+                  <!-- // 输入框 -->
+                </div>
+                <div class="comment-item reply">
+                  <div class="header">
+                    <div class="user-info">
+                      <img class="avater" src="../assets/home/qa/user_head.jpg" alt="">
+                      <strong class="uname">用户昵称</strong>
+                    </div>
+                    <div class="time">2小时前</div>
+                  </div>
+                  <div class="body">
+                    不能这么说，是他们的眼界让他们不能接受。现在中国做到的事是让他们世界观崩塌的事[飙泪笑][飙泪笑]
+                  </div>
+                  <div class="footer">
+                    <div><i class="glyphicon glyphicon-thumbs-up"></i> 5</div>
+                    <div><i class="glyphicon glyphicon-share-alt"></i> 回复</div>
+                    <div><i class="glyphicon glyphicon-thumbs-down"></i> 踩</div>
+                    <div><i class="glyphicon glyphicon-flag"></i> 举报</div>
+                  </div>
+                  <!-- 输入框 -->
+                  <form class="form-horizontal comment-publish hidden">
+                    <input type="text" class="form-control" placeholder="写下你的评论...">
+                    <button type="button" class="btn btn-default btn-grey">发布</button>
+                  </form>
+                  <!-- // 输入框 -->
+                </div>
+                <div class="comment-item">
+                  <div class="header">
+                    <div class="user-info">
+                      <img class="avater" src="../assets/home/qa/user_head.jpg" alt="">
+                      <strong class="uname">用户昵称</strong>
+                    </div>
+                    <div class="time">2小时前</div>
+                  </div>
+                  <div class="body">
+                    不能这么说，是他们的眼界让他们不能接受。现在中国做到的事是让他们世界观崩塌的事[飙泪笑][飙泪笑]
+                  </div>
+                  <div class="footer">
+                    <div><i class="glyphicon glyphicon-thumbs-up"></i> 5</div>
+                    <div><i class="glyphicon glyphicon-share-alt"></i> 回复</div>
+                    <div><i class="glyphicon glyphicon-thumbs-down"></i> 踩</div>
+                    <div><i class="glyphicon glyphicon-flag"></i> 举报</div>
+                  </div>
+                  <!-- 输入框 -->
+                  <form class="form-horizontal comment-publish hidden">
+                    <input type="text" class="form-control" placeholder="写下你的评论...">
+                    <button type="button" class="btn btn-default btn-grey">发布</button>
+                  </form>
+                  <!-- // 输入框 -->
+                </div>
+                <div class="comment-item">
+                  <div class="header">
+                    <div class="user-info">
+                      <img class="avater" src="../assets/home/qa/user_head.jpg" alt="">
+                      <strong class="uname">用户昵称</strong>
+                    </div>
+                    <div class="time">2小时前</div>
+                  </div>
+                  <div class="body">
+                    不能这么说，是他们的眼界让他们不能接受。现在中国做到的事是让他们世界观崩塌的事[飙泪笑][飙泪笑]
+                  </div>
+                  <div class="footer">
+                    <div><i class="glyphicon glyphicon-thumbs-up"></i> 5</div>
+                    <div><i class="glyphicon glyphicon-share-alt"></i> 回复</div>
+                    <div><i class="glyphicon glyphicon-thumbs-down"></i> 踩</div>
+                    <div><i class="glyphicon glyphicon-flag"></i> 举报</div>
+                  </div>
+                  <!-- 输入框 -->
+                  <form class="form-horizontal comment-publish hidden">
+                    <input type="text" class="form-control" placeholder="写下你的评论...">
+                    <button type="button" class="btn btn-default btn-grey">发布</button>
+                  </form>
+                  <!-- // 输入框 -->
+                </div>
+              </div>
+              <!-- // 评论列表 -->
+              <!-- 发表评论 -->
+              <form class="form-horizontal comment-publish">
+                <input type="text" class="form-control" placeholder="写下你的评论...">
+                <button type="button" class="btn btn-default btn-grey">发布</button>
+              </form>
+              <!-- // 发表评论 -->
+            </div>
+            <!-- // 评论框 -->
+          </div>
+          <!-- // 回答内容区域 -->
+          <a class="link-more" href="#">查看全部 6,660 个回答</a>
+        </div>
+        <div class="col-md-3 right-content">
+          <!-- 关于作者 -->
+          <div class="about-user box-wrap">
+            <div class="user-info">
+              <div class="avater">
+                <img src="../assets/home/qa/user_head.jpg" alt="用户头像">
+              </div>
+              <div class="desc">
+                <h4>舒大克</h4>
+                <p>《互联网营销人实战手记》新书上市； 公众号：舒大克。</p>
+              </div>
+            </div>
+            <!-- 用户统计 -->
+            <div class="qa-stats">
+              <div>
+                <span>回答</span>
+                <strong>309</strong>
+              </div>
+              <div>
+                <span>文章</span>
+                <strong>40</strong>
+              </div>
+              <div>
+                <span>关注者</span>
+                <strong>85,265</strong>
+              </div>
+            </div>
+            <!-- // 用户统计 -->
+            <div class="menu-ls">
+              <div>
+                <a href="#" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-plus"></i>关注他</a>
+              </div>
+              <div>
+                <a href="#" class="btn btn-default btn-sm btn-grey"><i class="glyphicon glyphicon-comment"></i>发私信</a>
+              </div>
+            </div>
+          </div>
+          <!-- //关于作者 -->
+          <!-- 相关问题 -->
+          <div class="rel-ques box-wrap">
+            <div class="title">相关问题</div>
+            <div class="rel-que-ls">
+              <div>
+                <a href="#">疫情过后，你会报复性消费吗？</a><span>30 个回答</span>
+              </div>
+              <div>
+                <a href="#">疫情过后你最想去哪？和谁一起？</a><span>19 个回答</span>
+              </div>
+              <div>
+                <a href="#">如果能熬过这波疫情，你最想做的事情是什么？</a><span>21 个回答</span>
+              </div>
+              <div>
+                <a href="#">请问这次疫情可能有积极影响吗？</a><span>9 个回答</span>
+              </div>
+              <div>
+                <a href="#">如果疫情结束了你最想做什么？</a><span>3 个回答</span>
+              </div>
+            </div>
+          </div>
+          <!-- //相关问题 -->
+          <!-- 右侧页脚 -->
+          <div class="right-footer">
+            <a href="#">用户指南</a><span class="dot">·</span>
+            <a href="#">用户使用协议</a><span class="dot">·</span>
+            <a href="#">用户隐私权政策</a>
+            <br />
+            <a href="#">侵权举报</a><span class="dot">·</span>
+            <a href="#">网上有害信息举报专区</a>
+            <br />
+            <a href="#">京ICP证 第10001000号</a>
+            <br />
+            <a href="#">京ICP备 第10001000号</a>
+            <br />
+            <a href="#">联系我们 &copy; 2020在线问答</a>
+          </div>
+          <!-- //右侧页脚 -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="layout-footer">
+    <a href="#" data-toggle="tooltip" title="意见反馈"><i class="glyphicon glyphicon-briefcase"></i></a>
+    <a href="#" data-toggle="tooltip" title="回到顶部"><i class="glyphicon glyphicon-arrow-up"></i></a>
+  </div>
+  <!-- 写回答，对话框 -->
+  <div class="modal fade" id="addComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <form class="form-horizontal modal-dialog" role="document" method="post" action="..">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">写回答</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <textarea class="form-control" rows="10" placeholder="请输入正文"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="submit" class="btn btn-primary">提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- // 写回答，对话框 -->
+
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="../assets/plugins/jquery-3.4.1.min.js"></script>
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+  <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+
+      // 内容显示与收起
+      $('.show-all').click(function () {
+        $(this).addClass('hidden');
+        $('.show-desc').removeClass('hidden');
+      })
+      $('.show-desc').click(function () {
+        $(this).addClass('hidden');
+        $('.show-all').removeClass('hidden');
+      })
+    })
+  </script>
+</body>
+
+</html>

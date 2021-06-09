@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>在线问答系统-写文章</title>
+
+  <!-- Bootstrap -->
+  <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+  <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+  <!--[if lt IE 9]>
+    <script src="../assets/plugins/html5shiv.min.js"></script>
+    <script src="../assets/plugins/respond.min.js"></script>
+    <![endif]-->
+
+  <link rel="stylesheet" href="../assets/style/common.css">
+  <link rel="stylesheet" href="../assets/style/write.css">
+</head>
+
+<body class="layout">
+  <!-- 顶部导航 -->
+  <div class="layout-header">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#id-index-banner"
+            aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">在线问答系统</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="id-index-banner">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">话题</a></li>
+          </ul>
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="搜索话题">
+            </div>
+            <button type="submit" class="btn btn-default">搜索</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">提问</a></li>
+            <li><a href="#">消息<span class="badge">4</span></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">个人中心 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">我的主页</a></li>
+                <li><a href="#">设置</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">退出</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  <!-- // 顶部导航 -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <form class="form-horizontal write-form">
+          <div class="form-group">
+            <button type="submit" class="btn btn-info pull-right">发布</button>
+          </div>
+          <div class="form-group">
+            <label class="upload-file">
+              <input type="file" accept=".jpeg, .jpg, .png">
+              <i class="glyphicon glyphicon-camera"></i>
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="请输入标题（最多50个字）">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="输入标签，用,分隔">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="5" placeholder="简述"></textarea>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="10" placeholder="请输入正文"></textarea>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="../assets/plugins/jquery-3.4.1.min.js"></script>
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+  <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    $(function () {
+      // 文件选择后，在浏览器中预览
+      $('input[type=file]').change(function () {
+        var file = this.files[0];
+        var reader = new FileReader();
+        reader.onload = function () {
+          $('.upload-file').css('background-image', 'url(' + reader.result + ')')
+        }
+        reader.readAsDataURL(file);
+      })
+    })
+  </script>
+</body>
+
+</html>

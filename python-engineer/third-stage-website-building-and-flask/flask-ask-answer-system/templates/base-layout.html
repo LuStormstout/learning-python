@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block layout %}
+    {# 顶部导航 #}
+    {% include 'components/layout-header-nav.html' %}
+    {% block content %}
+        {# 内容区域 #}
+    {% endblock %}
+
+    {# 底部右下角菜单 #}
+    <div class="layout-footer">
+        <a href="#" data-toggle="tooltip" title="意见反馈"><i class="glyphicon glyphicon-briefcase"></i></a>
+        <a href="#top" data-toggle="tooltip" title="回到顶部"><i class="glyphicon glyphicon-arrow-up"></i></a>
+    </div>
+{% endblock %}
+{% block js %}
+    <script>
+        $(function () {
+            // 页面右下角的菜单提示
+            $('[data-toggle="tooltip"]').tooltip()
+            {% block js_inline %}
+                {# jquery 内部的 js 逻辑 #}
+            {% endblock %}
+        })
+    </script>
+{% endblock %}
