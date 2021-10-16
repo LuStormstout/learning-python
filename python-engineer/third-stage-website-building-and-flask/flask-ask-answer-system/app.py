@@ -129,7 +129,49 @@ class AnswerComment(db.Model):
 
 
 class AnswerLove(db.Model):
-    pass
+    __tablename__ = 'qa_answer_love'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    created_at = Column(DateTime, default=datetime.now, comment='创建时间')
+    user_id = Column(Integer, ForeignKey('accounts_user.id'), comment='关联用户')
+    answer_id = Column(Integer, ForeignKey('qa_answer.id'), comment='关联答案')
+    q_id = Column(Integer, ForeignKey('qa_question.id'), comment='关联问题')
+    # 建立与用户的一对多属性
+    user = db.relationship('User', backref=db.backref('answer_love_list', lazy='dynamic'))
+    # 建立与答案的一对多属性
+    answer = db.relationship('Answer', backref=db.backref('answer_love_list', lazy='dynamic'))
+    # 建立与问题的一对多属性
+    question = db.relationship('Question', backref=db.backref('question_love_list', lazy='dynamic'))
+
+
+class AnswerCollect(db.Model):
+    """ 收藏的回答 """
+    __tablename__ = 'qa_answer_collect'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    created_at = Column(datetime, default=datetime.now, comment='创建时间')
+    is_valid = Column(Boolean, default=True, comment='逻辑删除')
+    user_id = Column(Integer, ForeignKey('accounts_user.id'), comment='关联用户')
+    answer_id = Column(Integer, ForeignKey('qa_answer.id'), comment='关联答案')
+    q_id = Column(Integer, ForeignKey('qa_question.id'), comment='关联问题')
+    # 建立与用户的一对多属性
+    user = db.relationship('User', backref=db.backref('answer_collect_list', lazy='dynamic'))
+    # 建立与问题的一对多属性
+    question = db.relationship('Question', backref=db.backref('question_collect_list', lazy='dynamic'))
+    # 建立与答案的一对多属性
+    answer = db.relationship('Answer', backref=db.backref('answer_collect_list', lazy='dynamic'))
+
+
+class QuestionFollow(db.Model):
+    """ 关注的问题 """
+    __tablename__ = 'qa_question_follow'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    created_at = Column(datetime, default=datetime.now, comment='创建时间')
+    is_valid = Column(Boolean, default=True, comment='逻辑删除')
+    user_id = Column(Integer, ForeignKey('accounts_user.id'), comment='关联用户')
+    q_id = Column(Integer, ForeignKey('qa_question.id'), comment='关联问题')
+    # 建立与用户的一对多属性
+    user = db.relationship('User', backref=db.backref('question_follow_list', lazy='dynamic'))
+    # 建立与问题的一对多属性
+    question = db.relationship('Question', backref=db.backref('question_follow_list', lazy='dynamic'))
 
 
 @app.route('/')
