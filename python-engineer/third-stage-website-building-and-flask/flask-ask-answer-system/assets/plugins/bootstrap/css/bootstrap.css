@@ -2325,7 +2325,7 @@ th {
 }
 table col[class*="col-"] {
   position: static;
-  display: table-db.Column;
+  display: table-column;
   float: none;
 }
 table td[class*="col-"],
