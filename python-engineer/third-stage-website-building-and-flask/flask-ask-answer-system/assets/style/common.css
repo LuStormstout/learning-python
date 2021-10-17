@@ -42,7 +42,7 @@
     right: 15px;
     bottom: 15px;
     display: flex;
-    flex-direction: column;
+    flex-direction: db.Column;
 }
 .layout-footer i{
     padding: 10px;
