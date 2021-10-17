@@ -56,7 +56,7 @@ class UserLoginHistory(db.Model):
 
 class Question(db.Model):
     """ 问题 """
-    __tablename__ = 'question'
+    __tablename__ = 'qa_question'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(128), nullable=False, comment='问题标题')
     desc = db.Column(db.String(256), comment='问题描述')
@@ -74,27 +74,27 @@ class Question(db.Model):
 
 class QuestionTags(db.Model):
     """ 问题下的标签 """
-    __tablename__ = 'question_tags'
+    __tablename__ = 'qa_question_tags'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     tag_name = db.Column(db.String(16), nullable=False, comment='标签名称')
     is_valid = db.Column(db.Boolean, default=True, comment='逻辑删除')
     created_at = db.Column(db.DateTime, default=datetime.now, comment='创建时间')
     updated_at = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now, comment='更新时间')
-    q_id = db.Column(db.Integer, db.ForeignKey('question.id'), comment='关联问题')
+    q_id = db.Column(db.Integer, db.ForeignKey('qa_question.id'), comment='关联问题')
     # 建立与问题一对多属性
     question = db.relationship('Question', backref=db.backref('tag_list', lazy='dynamic'))
 
 
 class Answer(db.Model):
     """ 问题的回答 """
-    __tablename__ = 'answer'
+    __tablename__ = 'qa_answer'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     content = db.Column(db.Text, nullable=False, comment='回答的内容详情')
     is_valid = db.Column(db.Boolean, default=True, comment='逻辑删除')
     created_at = db.Column(db.DateTime, default=datetime.now, comment='创建时间')
     updated_at = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now, comment='更新时间')
     user_id = db.Column(db.Integer, db.ForeignKey('accounts_user.id'), comment='关联用户')
-    q_id = db.Column(db.Integer, db.ForeignKey('question.id'), comment='关联问题')
+    q_id = db.Column(db.Integer, db.ForeignKey('qa_question.id'), comment='关联问题')
     # 建立与用户的一对多属性
     user = db.relationship('User', backref=db.backref('answer_list', lazy='dynamic'))
     # 建立与问题的一对多属性
@@ -103,7 +103,7 @@ class Answer(db.Model):
 
 class AnswerComment(db.Model):
     """ 回答的评论 """
-    __tablename__ = 'answer_comment'
+    __tablename__ = 'qa_answer_comment'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     content = db.Column(db.String(512), nullable=False, comment='评论内容')
     love_count = db.Column(db.Integer, default=0, comment='赞同人数')
@@ -111,10 +111,10 @@ class AnswerComment(db.Model):
     is_valid = db.Column(db.Boolean, default=True, comment='逻辑删除')
     created_at = db.Column(db.DateTime, default=datetime.now, comment='创建时间')
     updated_at = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now, comment='更新时间')
-    reply_id = db.Column(db.Integer, db.ForeignKey('answer_comment.id'), nullable=True, comment='回复ID')
+    reply_id = db.Column(db.Integer, db.ForeignKey('qa_answer_comment.id'), nullable=True, comment='回复ID')
     user_id = db.Column(db.Integer, db.ForeignKey('accounts_user.id'), comment='关联用户')
-    answer_id = db.Column(db.Integer, db.ForeignKey('answer.id'), comment='关联答案')
-    q_id = db.Column(db.Integer, db.ForeignKey('question.id'), comment='关联问题')
+    answer_id = db.Column(db.Integer, db.ForeignKey('qa_answer.id'), comment='关联答案')
+    q_id = db.Column(db.Integer, db.ForeignKey('qa_question.id'), comment='关联问题')
     # 建立与用户一对多的属性
     user = db.relationship('User', backref=db.backref('answer_comment_list', lazy='dynamic'))
     # 建立与答案一对多的属性
