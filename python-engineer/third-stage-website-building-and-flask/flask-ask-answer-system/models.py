@@ -98,7 +98,7 @@ class Answer(db.Model):
     # 建立与用户的一对多属性
     user = db.relationship('User', backref=db.backref('answer_list', lazy='dynamic'))
     # 建立与问题的一对多属性
-    question = db.relationship('Question', db.backref('answer_list', lazy='dynamic'))
+    question = db.relationship('Question', backref=db.backref('answer_list', lazy='dynamic'))
 
 
 class AnswerComment(db.Model):
