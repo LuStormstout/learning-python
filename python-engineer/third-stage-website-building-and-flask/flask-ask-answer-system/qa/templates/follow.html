@@ -8,477 +8,252 @@
 
 {% block content %}
 
-    <div class="layout-main">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9">
-                    <!-- 消息通知区域 -->
-                    <div class="alert alert-warning alert-dismissible fade in" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                aria-hidden="true">×</span></button>
-                        <strong>你好，张三!</strong> 欢迎登陆在线问答系统
-                    </div>
-                    <!-- // 消息通知区域 -->
-                    <!-- banner图 -->
-                    <div id="id-index-banner" class="carousel slide" data-ride="carousel">
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img class="img-responsive" src="../../assets/home/banner/banner1.jpg" alt="banner图">
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" src="../../assets/home/banner/banner1.jpg" alt="banner图">
-                            </div>
-                        </div>
-
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#id-index-banner" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#id-index-banner" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <!-- //banner图 -->
-                    <!-- 分类菜单 -->
-                    <div class="cls-menu-ls">
-                        <a href="#">推荐</a>
-                        <a href="#" class="active">关注</a>
-                        <a href="#">热榜</a>
-                    </div>
-                    <!-- //分类菜单 -->
-                    <!-- 问题列表 -->
-                    <div class="qa-ls">
-                        <div class="qa-item">
-                            <a href="detail.html" class="title">钟南山团队从尿液中分离出新冠病毒，这对疫情防治有什么影响？</a>
-                            <div class="desc">
-                                <div class="left">
-                                    <img src="../../assets/home/qa/left.jpg" alt="" srcset="">
-                                </div>
-                                <div class="right">
-                                    <p class="show-desc">Vigorous Cooler： 尿液出现病毒并不罕见，但第一步是病毒要进入循环系统（血液、淋巴）。
-                                        比如寨卡病毒通过蚊子吸血进入循环系统，再进入泌尿系统。对于新型冠状病毒来说，第一步是通过呼吸系统进入下...
-                                        <span class="more">阅读原文<i class="glyphicon glyphicon-menu-down"></i></span>
-                                    </p>
-                                    <p class="show-all hidden">
-                                        27日，广州市政府新闻办在广州医科大学举办疫情防控专场新闻通气会，国家卫健委高级别专家组组长、国家呼吸系统疾病临床医学研究中心主任钟南山谈到疫情的预测时表示，疫情开始时，国外有流行病学家用权威的试验模型，预测2月初，中国感染新冠肺炎人数将达16万人。钟南山说：“这是没有考虑到国家的强力干预，也没有考虑春节后的延迟复工，我们也做了预测模型，2月中旬或下旬达到疫情高峰，确诊病例约六、七万人，投到国外权威期刊，被退了回来，感觉和上面的预测水平差太多，还有人给我微信‘你的话几天之内就会被碾个粉碎’。但事实上，我们预测更接近权威。”
-                                        <span class="more">收起<i class="glyphicon glyphicon-menu-up"></i></span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="qa-footer">
-                                <div>
-                                    <button type="button" class="btn btn-info btn-sm">关 注</button>
-                                </div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-comment"></i> 113条评论</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-send"></i>分享</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-flag"></i>举报</div>
-                                <div class="txt-menu btn-group">
-                                    <i class="glyphicon glyphicon-option-horizontal dropdown-toggle"
-                                       data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false"></i>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">不感兴趣</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="qa-item">
-                            <a href="detail.html" class="title">钟南山团队从尿液中分离出新冠病毒，这对疫情防治有什么影响？</a>
-                            <div class="desc">
-                                <div class="right">
-                                    <p class="show-desc">Vigorous Cooler： 尿液出现病毒并不罕见，但第一步是病毒要进入循环系统（血液、淋巴）。
-                                        比如寨卡病毒通过蚊子吸血进入循环系统，再进入泌尿系统。对于新型冠状病毒来说，第一步是通过呼吸系统进入下...
-                                        <span class="more">阅读原文<i class="glyphicon glyphicon-menu-down"></i></span>
-                                    </p>
-                                    <p class="show-all hidden">
-                                        27日，广州市政府新闻办在广州医科大学举办疫情防控专场新闻通气会，国家卫健委高级别专家组组长、国家呼吸系统疾病临床医学研究中心主任钟南山谈到疫情的预测时表示，疫情开始时，国外有流行病学家用权威的试验模型，预测2月初，中国感染新冠肺炎人数将达16万人。钟南山说：“这是没有考虑到国家的强力干预，也没有考虑春节后的延迟复工，我们也做了预测模型，2月中旬或下旬达到疫情高峰，确诊病例约六、七万人，投到国外权威期刊，被退了回来，感觉和上面的预测水平差太多，还有人给我微信‘你的话几天之内就会被碾个粉碎’。但事实上，我们预测更接近权威。”
-                                        <span class="more">收起<i class="glyphicon glyphicon-menu-up"></i></span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="qa-footer">
-                                <div>
-                                    <button type="button" class="btn btn-info btn-sm">关 注</button>
-                                </div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-comment"></i> 113条评论</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-send"></i>分享</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-flag"></i>举报</div>
-                                <div class="txt-menu"></div>
-                                <div class="txt-menu btn-group">
-                                    <i class="glyphicon glyphicon-option-horizontal dropdown-toggle"
-                                       data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false"></i>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">不感兴趣</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="qa-item">
-                            <a href="detail.html" class="title">钟南山团队从尿液中分离出新冠病毒，这对疫情防治有什么影响？</a>
-                            <div class="desc">
-                                <div class="left">
-                                    <img src="../../assets/home/qa/left.jpg" alt="" srcset="">
-                                </div>
-                                <div class="right">
-                                    <p class="show-desc">Vigorous Cooler： 尿液出现病毒并不罕见，但第一步是病毒要进入循环系统（血液、淋巴）。
-                                        比如寨卡病毒通过蚊子吸血进入循环系统，再进入泌尿系统。对于新型冠状病毒来说，第一步是通过呼吸系统进入下...
-                                        <span class="more">阅读原文<i class="glyphicon glyphicon-menu-down"></i></span>
-                                    </p>
-                                    <p class="show-all hidden">
-                                        27日，广州市政府新闻办在广州医科大学举办疫情防控专场新闻通气会，国家卫健委高级别专家组组长、国家呼吸系统疾病临床医学研究中心主任钟南山谈到疫情的预测时表示，疫情开始时，国外有流行病学家用权威的试验模型，预测2月初，中国感染新冠肺炎人数将达16万人。钟南山说：“这是没有考虑到国家的强力干预，也没有考虑春节后的延迟复工，我们也做了预测模型，2月中旬或下旬达到疫情高峰，确诊病例约六、七万人，投到国外权威期刊，被退了回来，感觉和上面的预测水平差太多，还有人给我微信‘你的话几天之内就会被碾个粉碎’。但事实上，我们预测更接近权威。”
-                                        <span class="more">收起<i class="glyphicon glyphicon-menu-up"></i></span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="qa-footer">
-                                <div>
-                                    <button type="button" class="btn btn-default btn-sm">已关注</button>
-                                </div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-comment"></i> 113条评论</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-send"></i>分享</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-flag"></i>举报</div>
-                                <div class="txt-menu"></div>
-                                <div class="txt-menu btn-group">
-                                    <i class="glyphicon glyphicon-option-horizontal dropdown-toggle"
-                                       data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false"></i>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">不感兴趣</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="qa-item">
-                            <a href="detail.html" class="title">钟南山团队从尿液中分离出新冠病毒，这对疫情防治有什么影响？</a>
-                            <div class="desc">
-                                <div class="right">
-                                    <p class="show-desc">Vigorous Cooler： 尿液出现病毒并不罕见，但第一步是病毒要进入循环系统（血液、淋巴）。
-                                        比如寨卡病毒通过蚊子吸血进入循环系统，再进入泌尿系统。对于新型冠状病毒来说，第一步是通过呼吸系统进入下...
-                                        <span class="more">阅读原文<i class="glyphicon glyphicon-menu-down"></i></span>
-                                    </p>
-                                    <p class="show-all hidden">
-                                        27日，广州市政府新闻办在广州医科大学举办疫情防控专场新闻通气会，国家卫健委高级别专家组组长、国家呼吸系统疾病临床医学研究中心主任钟南山谈到疫情的预测时表示，疫情开始时，国外有流行病学家用权威的试验模型，预测2月初，中国感染新冠肺炎人数将达16万人。钟南山说：“这是没有考虑到国家的强力干预，也没有考虑春节后的延迟复工，我们也做了预测模型，2月中旬或下旬达到疫情高峰，确诊病例约六、七万人，投到国外权威期刊，被退了回来，感觉和上面的预测水平差太多，还有人给我微信‘你的话几天之内就会被碾个粉碎’。但事实上，我们预测更接近权威。”
-                                        <span class="more">收起<i class="glyphicon glyphicon-menu-up"></i></span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="qa-footer">
-                                <div>
-                                    <button type="button" class="btn btn-info btn-sm">关 注</button>
-                                </div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-comment"></i> 113条评论</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-send"></i>分享</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-flag"></i>举报</div>
-                                <div class="txt-menu"></div>
-                                <div class="txt-menu btn-group">
-                                    <i class="glyphicon glyphicon-option-horizontal dropdown-toggle"
-                                       data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false"></i>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">不感兴趣</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="qa-item">
-                            <a href="detail.html" class="title">钟南山团队从尿液中分离出新冠病毒，这对疫情防治有什么影响？</a>
-                            <div class="desc">
-                                <div class="left">
-                                    <img src="../../assets/home/qa/left.jpg" alt="" srcset="">
-                                </div>
-                                <div class="right">
-                                    <p class="show-desc">Vigorous Cooler： 尿液出现病毒并不罕见，但第一步是病毒要进入循环系统（血液、淋巴）。
-                                        比如寨卡病毒通过蚊子吸血进入循环系统，再进入泌尿系统。对于新型冠状病毒来说，第一步是通过呼吸系统进入下...
-                                        <span class="more">阅读原文<i class="glyphicon glyphicon-menu-down"></i></span>
-                                    </p>
-                                    <p class="show-all hidden">
-                                        27日，广州市政府新闻办在广州医科大学举办疫情防控专场新闻通气会，国家卫健委高级别专家组组长、国家呼吸系统疾病临床医学研究中心主任钟南山谈到疫情的预测时表示，疫情开始时，国外有流行病学家用权威的试验模型，预测2月初，中国感染新冠肺炎人数将达16万人。钟南山说：“这是没有考虑到国家的强力干预，也没有考虑春节后的延迟复工，我们也做了预测模型，2月中旬或下旬达到疫情高峰，确诊病例约六、七万人，投到国外权威期刊，被退了回来，感觉和上面的预测水平差太多，还有人给我微信‘你的话几天之内就会被碾个粉碎’。但事实上，我们预测更接近权威。”
-                                        <span class="more">收起<i class="glyphicon glyphicon-menu-up"></i></span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="qa-footer">
-                                <div>
-                                    <button type="button" class="btn btn-info btn-sm">关 注</button>
-                                </div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-comment"></i> 113条评论</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-send"></i>分享</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-flag"></i>举报</div>
-                                <div class="txt-menu"></div>
-                                <div class="txt-menu btn-group">
-                                    <i class="glyphicon glyphicon-option-horizontal dropdown-toggle"
-                                       data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false"></i>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">不感兴趣</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="qa-item">
-                            <a href="detail.html" class="title">钟南山团队从尿液中分离出新冠病毒，这对疫情防治有什么影响？</a>
-                            <div class="desc">
-                                <div class="right">
-                                    <p class="show-desc">Vigorous Cooler： 尿液出现病毒并不罕见，但第一步是病毒要进入循环系统（血液、淋巴）。
-                                        比如寨卡病毒通过蚊子吸血进入循环系统，再进入泌尿系统。对于新型冠状病毒来说，第一步是通过呼吸系统进入下...
-                                        <span class="more">阅读原文<i class="glyphicon glyphicon-menu-down"></i></span>
-                                    </p>
-                                    <p class="show-all hidden">
-                                        27日，广州市政府新闻办在广州医科大学举办疫情防控专场新闻通气会，国家卫健委高级别专家组组长、国家呼吸系统疾病临床医学研究中心主任钟南山谈到疫情的预测时表示，疫情开始时，国外有流行病学家用权威的试验模型，预测2月初，中国感染新冠肺炎人数将达16万人。钟南山说：“这是没有考虑到国家的强力干预，也没有考虑春节后的延迟复工，我们也做了预测模型，2月中旬或下旬达到疫情高峰，确诊病例约六、七万人，投到国外权威期刊，被退了回来，感觉和上面的预测水平差太多，还有人给我微信‘你的话几天之内就会被碾个粉碎’。但事实上，我们预测更接近权威。”
-                                        <span class="more">收起<i class="glyphicon glyphicon-menu-up"></i></span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="qa-footer">
-                                <div>
-                                    <button type="button" class="btn btn-info btn-sm">关 注</button>
-                                </div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-comment"></i> 113条评论</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-send"></i>分享</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-flag"></i>举报</div>
-                                <div class="txt-menu"></div>
-                                <div class="txt-menu btn-group">
-                                    <i class="glyphicon glyphicon-option-horizontal dropdown-toggle"
-                                       data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false"></i>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">不感兴趣</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="qa-item">
-                            <a href="detail.html" class="title">钟南山团队从尿液中分离出新冠病毒，这对疫情防治有什么影响？</a>
-                            <div class="desc">
-                                <div class="left">
-                                    <img src="../../assets/home/qa/left.jpg" alt="" srcset="">
-                                </div>
-                                <div class="right">
-                                    <p class="show-desc">Vigorous Cooler： 尿液出现病毒并不罕见，但第一步是病毒要进入循环系统（血液、淋巴）。
-                                        比如寨卡病毒通过蚊子吸血进入循环系统，再进入泌尿系统。对于新型冠状病毒来说，第一步是通过呼吸系统进入下...
-                                        <span class="more">阅读原文<i class="glyphicon glyphicon-menu-down"></i></span>
-                                    </p>
-                                    <p class="show-all hidden">
-                                        27日，广州市政府新闻办在广州医科大学举办疫情防控专场新闻通气会，国家卫健委高级别专家组组长、国家呼吸系统疾病临床医学研究中心主任钟南山谈到疫情的预测时表示，疫情开始时，国外有流行病学家用权威的试验模型，预测2月初，中国感染新冠肺炎人数将达16万人。钟南山说：“这是没有考虑到国家的强力干预，也没有考虑春节后的延迟复工，我们也做了预测模型，2月中旬或下旬达到疫情高峰，确诊病例约六、七万人，投到国外权威期刊，被退了回来，感觉和上面的预测水平差太多，还有人给我微信‘你的话几天之内就会被碾个粉碎’。但事实上，我们预测更接近权威。”
-                                        <span class="more">收起<i class="glyphicon glyphicon-menu-up"></i></span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="qa-footer">
-                                <div>
-                                    <button type="button" class="btn btn-info btn-sm">关 注</button>
-                                </div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-comment"></i> 113条评论</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-send"></i>分享</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-flag"></i>举报</div>
-                                <div class="txt-menu"></div>
-                                <div class="txt-menu btn-group">
-                                    <i class="glyphicon glyphicon-option-horizontal dropdown-toggle"
-                                       data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false"></i>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">不感兴趣</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="qa-item">
-                            <a href="detail.html" class="title">钟南山团队从尿液中分离出新冠病毒，这对疫情防治有什么影响？</a>
-                            <div class="desc">
-                                <div class="right">
-                                    <p class="show-desc">Vigorous Cooler： 尿液出现病毒并不罕见，但第一步是病毒要进入循环系统（血液、淋巴）。
-                                        比如寨卡病毒通过蚊子吸血进入循环系统，再进入泌尿系统。对于新型冠状病毒来说，第一步是通过呼吸系统进入下...
-                                        <span class="more">阅读原文<i class="glyphicon glyphicon-menu-down"></i></span>
-                                    </p>
-                                    <p class="show-all hidden">
-                                        27日，广州市政府新闻办在广州医科大学举办疫情防控专场新闻通气会，国家卫健委高级别专家组组长、国家呼吸系统疾病临床医学研究中心主任钟南山谈到疫情的预测时表示，疫情开始时，国外有流行病学家用权威的试验模型，预测2月初，中国感染新冠肺炎人数将达16万人。钟南山说：“这是没有考虑到国家的强力干预，也没有考虑春节后的延迟复工，我们也做了预测模型，2月中旬或下旬达到疫情高峰，确诊病例约六、七万人，投到国外权威期刊，被退了回来，感觉和上面的预测水平差太多，还有人给我微信‘你的话几天之内就会被碾个粉碎’。但事实上，我们预测更接近权威。”
-                                        <span class="more">收起<i class="glyphicon glyphicon-menu-up"></i></span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="qa-footer">
-                                <div>
-                                    <button type="button" class="btn btn-info btn-sm">关 注</button>
-                                </div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-comment"></i> 113条评论</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-send"></i>分享</div>
-                                <div class="txt-menu"><i class="glyphicon glyphicon-flag"></i>举报</div>
-                                <div class="txt-menu"></div>
-                                <div class="txt-menu btn-group">
-                                    <i class="glyphicon glyphicon-option-horizontal dropdown-toggle"
-                                       data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false"></i>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">不感兴趣</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="layout-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <!-- 消息通知区域 -->
+                <div class="alert alert-warning alert-dismissible fade in" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                    <strong>你好，张三!</strong> 欢迎登陆在线问答系统
                 </div>
-                <div class="col-md-3">
-                    <!-- 右侧菜单 -->
-                    <div class="right-menu-box box-wrap">
-                        <a href="#" class="menu-item">
-                            <i class="glyphicon glyphicon-plus"></i>
-                            <span>写回答</span>
-                        </a>
-                        <a href="write.html" class="menu-item">
-                            <i class="glyphicon glyphicon-pencil"></i>
-                            <span>写文章</span>
-                        </a>
-                        <a href="#" class="menu-item">
-                            <i class="glyphicon glyphicon-ok"></i>
-                            <span>些想法</span>
-                        </a>
-                        <a href="#" class="menu-item">
-                            <i class="glyphicon glyphicon-play-circle"></i>
-                            <span>发视频</span>
-                        </a>
-                        <a href="#" class="menu-item">
-                            <i class="glyphicon glyphicon-adjust"></i>
-                            <span>稍后答</span>
-                        </a>
-                        <a href="#" class="menu-item">
-                            <i class="glyphicon glyphicon-file"></i>
-                            <span>草稿箱</span>
-                        </a>
+                <!-- // 消息通知区域 -->
+                <!-- banner图 -->
+                <div id="id-index-banner" class="carousel slide" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img class="img-responsive" src="../../assets/home/banner/banner1.jpg" alt="banner图">
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" src="../../assets/home/banner/banner1.jpg" alt="banner图">
+                        </div>
                     </div>
-                    <!-- 创作者入口 -->
-                    <div class="right-creater-box box-wrap">
-                        <a href="#" class="menu-item">
-                            <div class="left">
-                                <i class="glyphicon glyphicon-user"></i>
-                                <span>草稿箱</span>
-                            </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#id-index-banner" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#id-index-banner" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <!-- //banner图 -->
+                <!-- 分类菜单 -->
+                <div class="cls-menu-ls">
+                    <a href="{{ url_for('qa.index') }}">推荐</a>
+                    <a href="{{ url_for('qa.follow') }}" class="active">关注</a>
+                    <a href="#">热榜</a>
+                </div>
+                <!-- //分类菜单 -->
+                <!-- 问题列表 -->
+                <div class="qa-ls">
+                    {% for question in page_data.items %}
+                    <div class="qa-item">
+                        <a href="{{ url_for('qa.detail', q_id=question.id) }}"
+                           class="title">{{ question.title }}</a>
+                        <div class="desc">
+                            {% if question.img %}
+                                <div class="left">
+                                    <img src="{{ question.img }}" alt="" srcset="">
+                                </div>
+                            {% endif %}
                             <div class="right">
-                                <span>去开通</span>
-                                <i class="glyphicon glyphicon-menu-right"></i>
+                                <div class="show-desc">{{ question.desc|d('暂无描述', True) }}
+                                    <span class="more">阅读原文<i class="glyphicon glyphicon-menu-down"></i></span>
+                                </div>
+                                <div class="show-all hidden">
+                                    {% autoescape false %}
+                                    {{ question.content|safe }}
+                                    {% endautoescape %}
+                                    <span class="more">收起<i class="glyphicon glyphicon-menu-up"></i></span>
+                                </div>
                             </div>
-                        </a>
+                        </div>
+                        <div class="qa-footer">
+                            <div>
+                                <button type="button" class="btn btn-info btn-sm">关 注</button>
+                            </div>
+                            <div class="txt-menu"><i
+                                    class="glyphicon glyphicon-comment"></i> {{ question.comment_count }} 条评论
+                            </div>
+                            <div class="txt-menu"><i class="glyphicon glyphicon-send"></i>分享</div>
+                            <div class="txt-menu"><i class="glyphicon glyphicon-flag"></i>举报</div>
+                            <div class="txt-menu btn-group">
+                                <i class="glyphicon glyphicon-option-horizontal dropdown-toggle"
+                                   data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false"></i>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">不感兴趣</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <!-- 彩色菜单入口 -->
-                    <div class="right-menu-box box-wrap">
-                        <a href="#" class="menu-item menu-live">
-                            <i class="glyphicon glyphicon-plus"></i>
-                            <span>Live</span>
-                        </a>
-                        <a href="#" class="menu-item menu-store">
-                            <i class="glyphicon glyphicon-pencil"></i>
-                            <span>书店</span>
-                        </a>
-                        <a href="#" class="menu-item menu-table">
-                            <i class="glyphicon glyphicon-ok"></i>
-                            <span>圆桌</span>
-                        </a>
-                        <a href="#" class="menu-item menu-special">
-                            <i class="glyphicon glyphicon-play-circle"></i>
-                            <span>专栏</span>
-                        </a>
-                        <a href="#" class="menu-item menu-consult">
-                            <i class="glyphicon glyphicon-adjust"></i>
-                            <span>付费咨询</span>
-                        </a>
-                        <a href="#" class="menu-item menu-wiki">
-                            <i class="glyphicon glyphicon-file"></i>
-                            <span>百科</span>
-                        </a>
-                    </div>
-                    <!-- // 彩色菜单入口 -->
-                    <!-- 我的入口 -->
-                    <div class="right-mine-box box-wrap">
-                        <a href="#" class="menu-item">
-                            <div class="left">
-                                <i class="glyphicon glyphicon-heart"></i>
-                                <span>我的收藏</span>
-                            </div>
-                            <div class="right">
-                                <span>0</span>
-                            </div>
-                        </a>
-                        <a href="#" class="menu-item">
-                            <div class="left">
-                                <i class="glyphicon glyphicon-question-sign"></i>
-                                <span>我关注的问题</span>
-                            </div>
-                            <div class="right">
-                                <span>28</span>
-                            </div>
-                        </a>
-                        <a href="#" class="menu-item">
-                            <div class="left">
-                                <i class="glyphicon glyphicon-user"></i>
-                                <span>我的邀请</span>
-                            </div>
-                            <div class="right">
-                                <span>33</span>
-                            </div>
-                        </a>
-                        <a href="#" class="menu-item">
-                            <div class="left">
-                                <i class="glyphicon glyphicon-yen"></i>
-                                <span>我的余额</span>
-                            </div>
-                            <div class="right">
-                            </div>
-                        </a>
-                        <a href="#" class="menu-item">
-                            <div class="left">
-                                <i class="glyphicon glyphicon-king"></i>
-                                <span>站务中心</span>
-                            </div>
-                            <div class="right">
-                            </div>
-                        </a>
-                        <a href="#" class="menu-item">
-                            <div class="left">
-                                <i class="glyphicon glyphicon-file"></i>
-                                <span>版权服务中心</span>
-                            </div>
-                            <div class="right">
-                            </div>
-                        </a>
-                    </div>
-                    <!-- //我的入口 -->
-                    <!-- 右侧页脚 -->
-                    <div class="right-footer">
-                        <a href="#">用户指南</a><span class="dot">·</span>
-                        <a href="#">用户使用协议</a><span class="dot">·</span>
-                        <a href="#">用户隐私权政策</a>
-                        <br/>
-                        <a href="#">侵权举报</a><span class="dot">·</span>
-                        <a href="#">网上有害信息举报专区</a>
-                        <br/>
-                        <a href="#">京ICP证 第10001000号</a>
-                        <br/>
-                        <a href="#">京ICP备 第10001000号</a>
-                        <br/>
-                        <a href="#">联系我们 &copy; 2020在线问答</a>
-                    </div>
-                    <!-- //右侧页脚 -->
+                    {% endfor %}
                 </div>
             </div>
+            <div class="col-md-3">
+                <!-- 右侧菜单 -->
+                <div class="right-menu-box box-wrap">
+                    <a href="#" class="menu-item">
+                        <i class="glyphicon glyphicon-plus"></i>
+                        <span>写回答</span>
+                    </a>
+                    <a href="write.html" class="menu-item">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                        <span>写文章</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="glyphicon glyphicon-ok"></i>
+                        <span>些想法</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="glyphicon glyphicon-play-circle"></i>
+                        <span>发视频</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="glyphicon glyphicon-adjust"></i>
+                        <span>稍后答</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="glyphicon glyphicon-file"></i>
+                        <span>草稿箱</span>
+                    </a>
+                </div>
+                <!-- 创作者入口 -->
+                <div class="right-creater-box box-wrap">
+                    <a href="#" class="menu-item">
+                        <div class="left">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span>草稿箱</span>
+                        </div>
+                        <div class="right">
+                            <span>去开通</span>
+                            <i class="glyphicon glyphicon-menu-right"></i>
+                        </div>
+                    </a>
+                </div>
+                <!-- 彩色菜单入口 -->
+                <div class="right-menu-box box-wrap">
+                    <a href="#" class="menu-item menu-live">
+                        <i class="glyphicon glyphicon-plus"></i>
+                        <span>Live</span>
+                    </a>
+                    <a href="#" class="menu-item menu-store">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                        <span>书店</span>
+                    </a>
+                    <a href="#" class="menu-item menu-table">
+                        <i class="glyphicon glyphicon-ok"></i>
+                        <span>圆桌</span>
+                    </a>
+                    <a href="#" class="menu-item menu-special">
+                        <i class="glyphicon glyphicon-play-circle"></i>
+                        <span>专栏</span>
+                    </a>
+                    <a href="#" class="menu-item menu-consult">
+                        <i class="glyphicon glyphicon-adjust"></i>
+                        <span>付费咨询</span>
+                    </a>
+                    <a href="#" class="menu-item menu-wiki">
+                        <i class="glyphicon glyphicon-file"></i>
+                        <span>百科</span>
+                    </a>
+                </div>
+                <!-- // 彩色菜单入口 -->
+                <!-- 我的入口 -->
+                <div class="right-mine-box box-wrap">
+                    <a href="#" class="menu-item">
+                        <div class="left">
+                            <i class="glyphicon glyphicon-heart"></i>
+                            <span>我的收藏</span>
+                        </div>
+                        <div class="right">
+                            <span>0</span>
+                        </div>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="left">
+                            <i class="glyphicon glyphicon-question-sign"></i>
+                            <span>我关注的问题</span>
+                        </div>
+                        <div class="right">
+                            <span>28</span>
+                        </div>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="left">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span>我的邀请</span>
+                        </div>
+                        <div class="right">
+                            <span>33</span>
+                        </div>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="left">
+                            <i class="glyphicon glyphicon-yen"></i>
+                            <span>我的余额</span>
+                        </div>
+                        <div class="right">
+                        </div>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="left">
+                            <i class="glyphicon glyphicon-king"></i>
+                            <span>站务中心</span>
+                        </div>
+                        <div class="right">
+                        </div>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="left">
+                            <i class="glyphicon glyphicon-file"></i>
+                            <span>版权服务中心</span>
+                        </div>
+                        <div class="right">
+                        </div>
+                    </a>
+                </div>
+                <!-- //我的入口 -->
+                <!-- 右侧页脚 -->
+                <div class="right-footer">
+                    <a href="#">用户指南</a><span class="dot">·</span>
+                    <a href="#">用户使用协议</a><span class="dot">·</span>
+                    <a href="#">用户隐私权政策</a>
+                    <br/>
+                    <a href="#">侵权举报</a><span class="dot">·</span>
+                    <a href="#">网上有害信息举报专区</a>
+                    <br/>
+                    <a href="#">京ICP证 第10001000号</a>
+                    <br/>
+                    <a href="#">京ICP备 第10001000号</a>
+                    <br/>
+                    <a href="#">联系我们 &copy; 2020在线问答</a>
+                </div>
+                <!-- //右侧页脚 -->
+            </div>
         </div>
-        <!-- // container -->
     </div>
+    <!-- // container -->
+</div>
 
-    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script src="../../assets/plugins/jquery-3.4.1.min.js"></script>
-    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="../../assets/plugins/jquery-3.4.1.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 {% endblock %}
 {% block js_inline %}
     // 点击，查看更多，把详细的那个p标签展示出来，把自己隐藏
     $('.show-desc').click(function () {
-        $(this).addClass('hidden');
-        $(this).next().removeClass('hidden')
+    $(this).addClass('hidden');
+    $(this).next().removeClass('hidden')
     })
     $('.show-all').click(function () {
-        $(this).addClass('hidden');
-        $(this).prev().removeClass('hidden')
+    $(this).addClass('hidden');
+    $(this).prev().removeClass('hidden')
     })
 {% endblock %}

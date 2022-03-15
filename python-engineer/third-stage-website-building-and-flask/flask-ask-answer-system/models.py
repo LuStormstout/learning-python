@@ -71,6 +71,11 @@ class Question(db.Model):
     # 建立与用户一对多的属性，user.question_list
     user = db.relationship('User', backref=db.backref('question_list', lazy='dynamic'))
 
+    @property
+    def comment_count(self):
+        """ 评论数量 """
+        return self.answer_comment_list.filter_by(is_valid=True).count()
+
 
 class QuestionTags(db.Model):
     """ 问题下的标签 """
